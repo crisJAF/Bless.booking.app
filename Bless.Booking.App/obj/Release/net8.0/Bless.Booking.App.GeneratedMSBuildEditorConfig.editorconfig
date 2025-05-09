@@ -32,10 +32,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristopher Avendano/Documents/Bless.booking.app/Bless.Booking.App/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Cristopher Avendano/Documents/Bless.booking.app/Bless.Booking.App/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -55,3 +51,11 @@ build_metadata.AdditionalFiles.CssScope = b-foq4tdkpny
 [C:/Users/Cristopher Avendano/Documents/Bless.booking.app/Bless.Booking.App/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-6rs2z22n58
+
+[C:/Users/Cristopher Avendano/Documents/Bless.booking.app/Bless.Booking.App/Components/Pages/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIZWFkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-9nocxo06jv
+
+[C:/Users/Cristopher Avendano/Documents/Bless.booking.app/Bless.Booking.App/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-suh5pbir8t

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cristopher Avendano\\source\\repos\\Bless.Booking.App\\Bless.Booking.App\\Bless.Booking.App.csproj",
+      "projectUniqueName": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\Bless.Booking.App.csproj",
       "projectName": "Bless.Booking.App",
-      "projectPath": "C:\\Users\\Cristopher Avendano\\source\\repos\\Bless.Booking.App\\Bless.Booking.App\\Bless.Booking.App.csproj",
+      "projectPath": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\Bless.Booking.App.csproj",
       "packagesPath": "C:\\Users\\Cristopher Avendano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cristopher Avendano\\source\\repos\\Bless.Booking.App\\Bless.Booking.App\\obj\\",
+      "outputPath": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

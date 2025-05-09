@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Bless.Booking.App.props" />
+</Project>

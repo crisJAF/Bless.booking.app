@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Bless.Booking.App/1.0.0": {
+        "runtime": {
+          "Bless.Booking.App.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bless.Booking.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

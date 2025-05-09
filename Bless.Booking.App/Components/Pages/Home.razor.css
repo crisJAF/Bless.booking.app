@@ -1,0 +1,98 @@
+﻿.home-hero {
+    min-height: 100vh;
+    background: url('img/fondo-textura-grun.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: #000;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.logo-bless {
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    height: auto;
+    z-index: 10;
+}
+
+/* Animaciones */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 767.98px) {
+    .btn {
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+
+.animate-fadein-left {
+    animation: fadeInLeft 1s ease-out;
+}
+
+.animate-fadein-right {
+    animation: fadeInRight 1s ease-out;
+}
+.hero-image {
+    min-height: 500px;
+    position: relative;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+}
+
+.barber-img {
+    display: block;
+    margin-left: auto;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.about-section {
+    min-height: 100vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.image-collage {
+    width: 450px; /* antes 350px */
+    display: flex;
+    flex-direction: column;
+}
+
+.collage-img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.collage-img-large {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+

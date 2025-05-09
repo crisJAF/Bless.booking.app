@@ -1,7 +1,60 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
+<Header></Header>
 
-<h1>Hello, world!</h1>
+<div class="home-hero row m-0 align-items-end justify-content-between">
+    <!-- Contenido de texto -->
+    <div class="hero-text col-12 col-md-6 animate-fadein-left pb-5 ps-md-5">
+        <img src="/img/bless-logo.png" alt="Logo Bless Barber Shop" class="mb-4 logo-bless" />
 
-Welcome to your new app.
+        <p class="text-white mb-2">Bienvenido a Bless Barber Shop</p>
+        <h1 class="display-5 fw-bold mb-4 text-white">
+            La mejor barbería para un<br />look profesional
+        </h1>
+        <p class="text-muted mb-4" style="max-width: 450px;">
+            Bless ofrece tratamientos personalizados de alto rendimiento para brindarte resultados visibles.
+        </p>
+
+        <div class="d-flex flex-column flex-md-row gap-3">
+            <button class="btn btn-outline-light px-5 py-3 fs-5 w-100 w-md-auto">Reservar ahora</button>
+            <button class="btn btn-outline-secondary px-5 py-3 fs-5 w-100 w-md-auto">Todos los servicios</button>
+        </div>
+    </div>
+
+    <!-- Contenido de imagen -->
+    <div class="hero-image col-md-6 d-none d-md-block" style="padding-right: 0; margin-right: 0;">
+        <img src="/img/fondo-barbero.png" alt="Cliente recibiendo corte"
+             class="img-fluid barber-img" style="display: block; margin-left: auto;" />
+    </div>
+</div>
+
+<section class="about-section d-flex align-items-center bg-white px-4">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
+        <!-- Galería estilo collage -->
+        <div class="image-collage me-md-5 mb-4 mb-md-0">
+            <div class="d-flex gap-3 mb-3">
+                <img src="/img/barba-barbero.jpg" class="img-fluid collage-img" alt="Corte 1" />
+                <img src="/img/raya-barbero.jpg" class="img-fluid collage-img" alt="Corte 2" />
+            </div>
+            <div>
+                <img src="/img/cara-barbero.jpg" class="img-fluid collage-img-large" alt="Corte 3" />
+            </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="text-content text-md-start text-center ms-md-5 ps-md-3">
+            <p class="text-uppercase text-secondary fw-semibold fs-6 mb-2">Sobre nosotros</p>
+            <h2 class="fw-bold text-dark display-4 mb-4">La mejor barbería para hombres</h2>
+            <p class="text-muted fs-5 mb-4">
+                Nuestros barberos hacen un trabajo increíble. Recorta tu cabello al estilo que deseas.
+                Reserva una cita con nosotros y luce como nunca antes.
+            </p>
+            <button class="btn btn-dark text-white px-5 py-3 fw-semibold">Leer más</button>
+        </div>
+    </div>
+</section>
+
+
+
+

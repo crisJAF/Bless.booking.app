@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bless.Booking.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e691c94cf7f3d1c209a58b07750973f71006df6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bless.Booking.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bless.Booking.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

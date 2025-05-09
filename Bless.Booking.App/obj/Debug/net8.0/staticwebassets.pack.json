@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bless.Booking.App.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Bless.Booking.App.70ykgpoy0t.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\fondo-rayado.jpg",
+      "PackagePath": "staticwebassets\\img\\fondo-rayado.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\fondo-textura-grun.jpg",
+      "PackagePath": "staticwebassets\\img\\fondo-textura-grun.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Bless.Booking.App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Bless.Booking.App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Bless.Booking.App.props",
+      "PackagePath": "build\\Bless.Booking.App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Bless.Booking.App.props",
+      "PackagePath": "buildMultiTargeting\\Bless.Booking.App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Bless.Booking.App.props",
+      "PackagePath": "buildTransitive\\Bless.Booking.App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
