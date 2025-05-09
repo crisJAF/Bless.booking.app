@@ -95,4 +95,55 @@
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(0,0,0,0.15);
 }
+.leer-mas-btn[b-suh5pbir8t] {
+    transition: all 0.3s ease-in-out;
+    border-radius: 6px;
+}
 
+    .leer-mas-btn:hover[b-suh5pbir8t] {
+        background-color: darkslategray;
+        color: #000000;
+        border: 1px solid #000000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+.booking-section[b-suh5pbir8t] {
+    background: url('/img/fondo-rayado.jpg') center center / cover no-repeat;
+    min-height: 50vh;
+    padding: 4rem 2rem;
+}
+
+.call-box[b-suh5pbir8t] {
+    max-width: 260px;
+}
+
+.icon-container i[b-suh5pbir8t] {
+    font-size: 2.5rem;
+}
+
+
+.working-review-section h4[b-suh5pbir8t] {
+    font-size: 1.75rem;
+}
+
+.working-review-section .btn[b-suh5pbir8t] {
+    transition: all 0.3s ease;
+}
+
+    .working-review-section .btn:hover[b-suh5pbir8t] {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+
+.services-section .service-box[b-suh5pbir8t] {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    .services-section .service-box:hover[b-suh5pbir8t] {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }

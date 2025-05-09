@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bless.Booking.App.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Bless.Booking.App.70ykgpoy0t.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Bless.Booking.App.obyad0iu3z.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\app.css",
@@ -21,12 +21,32 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\barba-barbero.jpg",
+      "PackagePath": "staticwebassets\\img\\barba-barbero.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\bless-logo.png",
+      "PackagePath": "staticwebassets\\img\\bless-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\cara-barbero.jpg",
+      "PackagePath": "staticwebassets\\img\\cara-barbero.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\fondo-barbero.png",
+      "PackagePath": "staticwebassets\\img\\fondo-barbero.png"
+    },
+    {
       "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\fondo-rayado.jpg",
       "PackagePath": "staticwebassets\\img\\fondo-rayado.jpg"
     },
     {
       "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\fondo-textura-grun.jpg",
       "PackagePath": "staticwebassets\\img\\fondo-textura-grun.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\img\\raya-barbero.jpg",
+      "PackagePath": "staticwebassets\\img\\raya-barbero.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Bless.Booking.App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

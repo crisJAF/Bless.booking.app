@@ -33,3 +33,5 @@ C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\D
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Booking.App.pdb
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Booking.App.genruntimeconfig.cache
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\ref\Bless.Booking.App.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Pages\Header.razor.rz.scp.css
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Pages\Footer.razor.rz.scp.css
