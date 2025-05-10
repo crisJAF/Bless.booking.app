@@ -18,23 +18,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.obyad0iu3z.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.u89g0nr96z.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>Bless.Booking.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Bless.Booking.App</BasePath>
-      <RelativePath>Bless.Booking.App.obyad0iu3z.bundle.scp.css</RelativePath>
+      <RelativePath>Bless.Booking.App.u89g0nr96z.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>obyad0iu3z</Fingerprint>
-      <Integrity>vGbhb0MIYYeCq7XJK+Q5GMpqmCEbicqttqRPgdoHdiM=</Integrity>
+      <Fingerprint>u89g0nr96z</Fingerprint>
+      <Integrity>MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.obyad0iu3z.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.u89g0nr96z.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\bootstrap\bootstrap.min.css'))">
       <SourceType>Package</SourceType>

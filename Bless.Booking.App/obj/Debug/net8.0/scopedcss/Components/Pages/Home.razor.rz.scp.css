@@ -1,3 +1,20 @@
+/* PREVENCIÓN GLOBAL DE DESBORDE */
+html[b-suh5pbir8t], body[b-suh5pbir8t] {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+*[b-suh5pbir8t] {
+    box-sizing: border-box;
+}
+
+img[b-suh5pbir8t] {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* HERO */
 .home-hero[b-suh5pbir8t] {
     min-height: 100vh;
     background: url('img/fondo-textura-grun.jpg') no-repeat center center;
@@ -15,7 +32,7 @@
     z-index: 10;
 }
 
-/* Animaciones */
+/* ANIMACIONES */
 @keyframes fadeInLeft-b-suh5pbir8t {
     from {
         opacity: 0;
@@ -39,13 +56,6 @@
         transform: translateX(0);
     }
 }
-@media (max-width: 767.98px) {
-    .btn[b-suh5pbir8t] {
-        font-size: 1.1rem;
-        padding: 0.75rem 1.5rem;
-    }
-}
-
 
 .animate-fadein-left[b-suh5pbir8t] {
     animation: fadeInLeft-b-suh5pbir8t 1s ease-out;
@@ -54,6 +64,8 @@
 .animate-fadein-right[b-suh5pbir8t] {
     animation: fadeInRight-b-suh5pbir8t 1s ease-out;
 }
+
+/* HERO IMG */
 .hero-image[b-suh5pbir8t] {
     min-height: 500px;
     position: relative;
@@ -70,6 +82,7 @@
     margin-bottom: 0;
 }
 
+/* ABOUT */
 .about-section[b-suh5pbir8t] {
     min-height: 100vh;
     padding-top: 4rem;
@@ -77,7 +90,7 @@
 }
 
 .image-collage[b-suh5pbir8t] {
-    width: 450px; /* antes 350px */
+    width: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -95,6 +108,7 @@
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(0,0,0,0.15);
 }
+
 .leer-mas-btn[b-suh5pbir8t] {
     transition: all 0.3s ease-in-out;
     border-radius: 6px;
@@ -107,8 +121,7 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-
-
+/* BOOKING */
 .booking-section[b-suh5pbir8t] {
     background: url('/img/fondo-rayado.jpg') center center / cover no-repeat;
     min-height: 50vh;
@@ -123,7 +136,7 @@
     font-size: 2.5rem;
 }
 
-
+/* WORKING */
 .working-review-section h4[b-suh5pbir8t] {
     font-size: 1.75rem;
 }
@@ -137,7 +150,7 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-
+/* SERVICES */
 .services-section .service-box[b-suh5pbir8t] {
     transition: all 0.3s ease;
     cursor: pointer;
@@ -147,3 +160,41 @@
         transform: translateY(-5px);
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
+/* RESPONSIVE FIXES */
+@media (max-width: 767.98px) {
+    .btn[b-suh5pbir8t] {
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .ps-md-5[b-suh5pbir8t], .ms-md-5[b-suh5pbir8t] {
+        padding-left: 1rem !important;
+        margin-left: 0 !important;
+    }
+
+    .me-md-5[b-suh5pbir8t], .pe-md-5[b-suh5pbir8t] {
+        padding-right: 1rem !important;
+        margin-right: 0 !important;
+    }
+
+    .image-collage[b-suh5pbir8t] {
+        width: 100% !important;
+    }
+
+    .container[b-suh5pbir8t],
+    .container-fluid[b-suh5pbir8t] {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .row[b-suh5pbir8t] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* AJUSTE EXTRA A SECCIONES PARA EVITAR DESBORDE */
+section[b-suh5pbir8t] {
+    overflow-x: hidden;
+}
