@@ -1,0 +1,43 @@
+﻿<!-- Tarjetas de reseñas dinámicas -->
+@if (reviews == null)
+{
+    <p class="text-center">Cargando reseñas...</p>
+}
+else if (reviews.Count == 0)
+{
+    <p class="text-center">No hay reseñas disponibles.</p>
+}
+else
+{
+    <div class="row justify-content-center gap-4">
+        @foreach (var review in reviews)
+        {
+            <div class="col-md-3 bg-white rounded shadow p-4 text-center">
+                @if (!string.IsNullOrWhiteSpace(review.profile_photo_url))
+                {
+                    <img src="@review.profile_photo_url" class="rounded-circle mb-3" width="70" height="70" alt="@review.author_name" onerror="this.style.display='none';" />
+                }
+                else
+                {
+                    <img src="/img/default-user.png" class="rounded-circle mb-3" width="70" height="70" alt="Usuario sin imagen" />
+                }
+
+                <p class="text-muted">@review.Text</p>
+
+                <div class="text-warning mb-2">
+                    @for (int i = 0; i < review.rating; i++)
+                    {
+                        <span>★</span>
+                    }
+                    @for (int i = review.rating; i < 5; i++)
+                    {
+                        <span class="text-secondary">★</span>
+                    }
+                </div>
+
+                <strong>@review.author_name</strong><br />
+                <small class="text-muted">@review.TimeAsDateTime.ToString("dd/MM/yyyy")</small>
+            </div>
+        }
+    </div>
+}

@@ -1,8 +1,6 @@
 ﻿@page "/"
 @rendermode InteractiveServer
 
-<Header></Header>
-
 <div class="home-hero row m-0 align-items-end justify-content-between">
     <!-- Contenido de texto -->
     <div class="hero-text col-12 col-md-6 animate-fadein-left pb-5 ps-md-5">
@@ -109,24 +107,7 @@
             </p>
             <button class="btn btn-dark mt-3 px-4 py-2">Escribir reseña</button>
         </div>
-
-        <!-- Tarjetas de reseñas -->
-        <div class="row justify-content-center gap-4">
-            <div class="col-md-3 bg-white rounded shadow p-4 text-center">
-                <img src="/img/cliente1.jpg" class="rounded-circle mb-3" width="70" height="70" alt="Cliente 1" />
-                <p class="text-muted">Una experiencia muy agradable con barberos profesionales. Recomendado.</p>
-                <div class="text-warning mb-2">★★★☆☆</div>
-                <strong>Umar Usman</strong><br />
-                <small class="text-muted">Cliente habitual</small>
-            </div>
-            <div class="col-md-3 bg-white rounded shadow p-4 text-center">
-                <img src="/img/cliente2.jpg" class="rounded-circle mb-3" width="70" height="70" alt="Cliente 2" />
-                <p class="text-muted">Servicio excelente y ambiente relajado. Volveré sin duda.</p>
-                <div class="text-warning mb-2">★★★★☆</div>
-                <strong>Rabia Khalil</strong><br />
-                <small class="text-muted">Cliente habitual</small>
-            </div>
-        </div>
+        <ReviewsComponent></ReviewsComponent>
     </div>
 </section>
 
@@ -198,5 +179,3 @@
         </div>
     </div>
 </section>
-
-<Footer></Footer>

@@ -1,10 +1,14 @@
 using Bless.Booking.App.Components;
+using Bless.Proxy;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<ReviewsProxy>();
 
 var app = builder.Build();
 
