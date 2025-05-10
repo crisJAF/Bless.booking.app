@@ -35,3 +35,15 @@ C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\D
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\ref\Bless.Booking.App.dll
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Pages\Header.razor.rz.scp.css
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Pages\Footer.razor.rz.scp.css
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Bless.Extension.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Bless.Models.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Bless.Proxy.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Bless.Extension.pdb
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Bless.Models.pdb
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Bless.Proxy.pdb
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Booking.App.csproj.AssemblyReference.cache
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Bo.AE05544B.Up2Date

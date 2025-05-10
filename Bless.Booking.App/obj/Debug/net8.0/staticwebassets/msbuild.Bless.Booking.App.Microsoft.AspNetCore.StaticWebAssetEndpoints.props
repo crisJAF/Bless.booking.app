@@ -13,16 +13,16 @@
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2591"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 15:56:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/Bless.Booking.App.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.obyad0iu3z.bundle.scp.css'))</AssetFile>
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.u89g0nr96z.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vGbhb0MIYYeCq7XJK\u002BQ5GMpqmCEbicqttqRPgdoHdiM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9511"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vGbhb0MIYYeCq7XJK\u002BQ5GMpqmCEbicqttqRPgdoHdiM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 20:44:14 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-MsHGiljPK9LU\u002Beg9GLYu8t6W7IIKlXTkNyHL1VurvTM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"10562"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022MsHGiljPK9LU\u002Beg9GLYu8t6W7IIKlXTkNyHL1VurvTM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 21:12:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/Bless.Booking.App.obyad0iu3z.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.obyad0iu3z.bundle.scp.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/Bless.Booking.App.u89g0nr96z.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.u89g0nr96z.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"obyad0iu3z"},{"Name":"integrity","Value":"sha256-vGbhb0MIYYeCq7XJK\u002BQ5GMpqmCEbicqttqRPgdoHdiM="},{"Name":"label","Value":"_content/Bless.Booking.App/Bless.Booking.App.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9511"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vGbhb0MIYYeCq7XJK\u002BQ5GMpqmCEbicqttqRPgdoHdiM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 20:44:14 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"u89g0nr96z"},{"Name":"integrity","Value":"sha256-MsHGiljPK9LU\u002Beg9GLYu8t6W7IIKlXTkNyHL1VurvTM="},{"Name":"label","Value":"_content/Bless.Booking.App/Bless.Booking.App.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10562"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022MsHGiljPK9LU\u002Beg9GLYu8t6W7IIKlXTkNyHL1VurvTM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 21:12:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/bootstrap/bootstrap.min.bpk8xqwxhs.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\bootstrap\bootstrap.min.css'))</AssetFile>

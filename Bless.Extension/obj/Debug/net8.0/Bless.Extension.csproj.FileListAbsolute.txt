@@ -1,0 +1,16 @@
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\bin\Debug\net8.0\Bless.Extension.deps.json
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\bin\Debug\net8.0\Bless.Extension.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\bin\Debug\net8.0\Bless.Extension.pdb
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\bin\Debug\net8.0\Bless.Models.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\bin\Debug\net8.0\Bless.Models.pdb
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.csproj.AssemblyReference.cache
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.AssemblyInfoInputs.cache
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.AssemblyInfo.cs
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.csproj.CoreCompileInputs.cache
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.sourcelink.json
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Ex.09746D50.Up2Date
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\refint\Bless.Extension.dll
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\Bless.Extension.pdb
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Extension\obj\Debug\net8.0\ref\Bless.Extension.dll
