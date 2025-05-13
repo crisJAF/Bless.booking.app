@@ -1,4 +1,5 @@
 using Bless.Booking.App.Components;
+using Bless.Extension;
 using Bless.Proxy;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,8 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddScoped<ServiceConfiguration>();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ReviewsProxy>();
+builder.Services.AddScoped<ReservaProxy>();
 
 var app = builder.Build();
 

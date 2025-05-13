@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bless.Extension")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56e8f8394079fbfa7b21c962be2e2e27cd7a62a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83be16f67b2df1a9064917b2b14d275695ffa240")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bless.Extension")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bless.Extension")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
