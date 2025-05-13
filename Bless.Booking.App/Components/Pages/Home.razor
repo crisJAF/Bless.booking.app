@@ -1,5 +1,7 @@
 ﻿@page "/"
 @rendermode InteractiveServer
+@using Bless.Booking.App.Components
+
 
 <div class="home-hero row m-0 align-items-end justify-content-between">
     <!-- Contenido de texto -->
@@ -15,9 +17,12 @@
         </p>
 
         <div class="d-flex flex-column flex-md-row gap-3">
-            <button class="btn btn-outline-light px-5 py-3 fs-5 w-100 w-md-auto">Reservar ahora</button>
+            <button class="btn btn-outline-light px-5 py-3 fs-5 w-100 w-md-auto" @onclick="() => mostrarModal = true">
+                Reservar ahora
+            </button>
             <button class="btn btn-outline-secondary px-5 py-3 fs-5 w-100 w-md-auto">Todos los servicios</button>
         </div>
+
     </div>
 
     <!-- Contenido de imagen -->
@@ -178,3 +183,8 @@
         </div>
     </div>
 </section>
+@code {
+    private bool mostrarModal = false;
+}
+
+<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="@(() => mostrarModal = false)" />

@@ -1,0 +1,21 @@
+.appointment-section .form-control[b-nx3qd46dam],
+.appointment-section .form-select[b-nx3qd46dam] {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+.modal-backdrop[b-nx3qd46dam] {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    inset: 0;
+    z-index: 1040;
+}
+
+.modal[b-nx3qd46dam] {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

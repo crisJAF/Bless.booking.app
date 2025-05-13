@@ -47,3 +47,4 @@ C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\D
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Bless.Proxy.pdb
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Booking.App.csproj.AssemblyReference.cache
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Bo.AE05544B.Up2Date
+C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\AgendarCitaComponent.razor.rz.scp.css

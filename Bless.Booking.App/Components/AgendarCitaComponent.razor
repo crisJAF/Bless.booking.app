@@ -1,0 +1,156 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Components.Forms
+
+@if (Visible)
+{
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal d-block" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-4 bg-white text-dark rounded">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">Agenda tu Cita</h5>
+                    <button type="button" class="btn-close" @onclick="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@cita" OnValidSubmit="EnviarFormulario">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="mb-3">
+                            <label class="form-label">Nombre completo</label>
+                            <InputText class="form-control" @bind-value="cita.Nombre" />
+                            <ValidationMessage For="@(() => cita.Nombre)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Correo electrónico</label>
+                            <InputText type="email" class="form-control" @bind-value="cita.Email" />
+                            <ValidationMessage For="@(() => cita.Email)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <InputText class="form-control" @bind-value="cita.Telefono" />
+                            <ValidationMessage For="@(() => cita.Telefono)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Servicio</label>
+                            <InputSelect class="form-select" @bind-value="cita.Servicio">
+                                <option value="">Seleccione un servicio</option>
+                                <option>Corte Moderno</option>
+                                <option>Lavado</option>
+                                <option>Color</option>
+                                <option>Recorte Facial</option>
+                                <option>Afeitado</option>
+                                <option>Masaje</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => cita.Servicio)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <InputDate class="form-control" @bind-value="cita.Fecha" />
+                            <ValidationMessage For="@(() => cita.Fecha)" />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Hora</label>
+                            <InputSelect class="form-select" @bind-Value="horaStr">
+                                <option value="">Seleccione una hora</option>
+                                @foreach (var hora in HorasDisponibles)
+                                {
+                                    <option value="@hora.ToString(@"hh\:mm")">@hora.ToString(@"hh\:mm")</option>
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => cita.Hora)" />
+                        </div>
+
+                        <button type="submit" class="btn btn-dark px-4 py-2 fw-semibold">Reservar Cita</button>
+
+                        @if (exito)
+                        {
+                            <div class="alert alert-success mt-4">
+                                ¡Tu cita ha sido agendada exitosamente!
+                            </div>
+                        }
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool Visible { get; set; }
+    [Parameter] public EventCallback OnClose { get; set; }
+
+    private CitaModel cita = new();
+    private bool exito = false;
+    private string horaStr;
+    private List<TimeSpan> HorasDisponibles = new();
+
+    private async Task Cerrar()
+    {
+        exito = false;
+        cita = new();
+        horaStr = null;
+        await OnClose.InvokeAsync();
+    }
+
+    private void EnviarFormulario()
+    {
+        if (TimeSpan.TryParse(horaStr, out var hora))
+        {
+            cita.Hora = hora;
+            exito = true;
+        }
+    }
+
+    protected override Task OnParametersSetAsync()
+    {
+        if (Visible)
+        {
+            HorasDisponibles = new List<TimeSpan>
+            {
+                new TimeSpan(9, 0, 0),
+                new TimeSpan(9, 30, 0),
+                new TimeSpan(10, 0, 0),
+                new TimeSpan(10, 30, 0),
+                new TimeSpan(11, 0, 0),
+                new TimeSpan(11, 30, 0),
+                new TimeSpan(14, 0, 0),
+                new TimeSpan(14, 30, 0),
+                new TimeSpan(15, 0, 0)
+            };
+
+            cita = new();
+            exito = false;
+            horaStr = null;
+        }
+
+        return base.OnParametersSetAsync();
+    }
+
+    public class CitaModel
+    {
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "El correo es obligatorio")]
+        [EmailAddress(ErrorMessage = "Correo no válido")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "El teléfono es obligatorio")]
+        public string Telefono { get; set; }
+
+        [Required(ErrorMessage = "Seleccione un servicio")]
+        public string Servicio { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una fecha")]
+        public DateTime? Fecha { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una hora")]
+        public TimeSpan? Hora { get; set; }
+    }
+}

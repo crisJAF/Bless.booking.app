@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IbrSTiqO/mGyGxz5YAa4q+sd3aOHrzTl+TCQrXj4Q8o=",
+  "Hash": "FWTVU6TC0RIwnxaS77LABfkzaCUgtheSMMj3xeez+i8=",
   "Source": "Bless.Booking.App",
   "BasePath": "_content/Bless.Booking.App",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "u89g0nr96z",
-      "Integrity": "MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM=",
+      "Fingerprint": "tq85a8xnui",
+      "Integrity": "hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bless.Booking.App.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "u89g0nr96z",
-      "Integrity": "MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM=",
+      "Fingerprint": "tq85a8xnui",
+      "Integrity": "hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bless.Booking.App.bundle.scp.css"
@@ -384,7 +384,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10562"
+          "Value": "11121"
         },
         {
           "Name": "Content-Type",
@@ -392,11 +392,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM=\""
+          "Value": "\"hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 21:12:57 GMT"
+          "Value": "Sat, 10 May 2025 23:25:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -406,7 +406,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM="
+          "Value": "sha256-hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0="
         }
       ]
     },
@@ -421,7 +421,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10562"
+          "Value": "11121"
         },
         {
           "Name": "Content-Type",
@@ -429,11 +429,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM=\""
+          "Value": "\"hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 21:12:57 GMT"
+          "Value": "Sat, 10 May 2025 23:25:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -443,12 +443,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM="
+          "Value": "sha256-hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0="
         }
       ]
     },
     {
-      "Route": "Bless.Booking.App.u89g0nr96z.bundle.scp.css",
+      "Route": "Bless.Booking.App.tq85a8xnui.bundle.scp.css",
       "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bless.Booking.App.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -458,7 +458,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10562"
+          "Value": "11121"
         },
         {
           "Name": "Content-Type",
@@ -466,11 +466,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM=\""
+          "Value": "\"hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 21:12:57 GMT"
+          "Value": "Sat, 10 May 2025 23:25:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -480,7 +480,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u89g0nr96z"
+          "Value": "tq85a8xnui"
         },
         {
           "Name": "label",
@@ -488,12 +488,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM="
+          "Value": "sha256-hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0="
         }
       ]
     },
     {
-      "Route": "Bless.Booking.App.u89g0nr96z.styles.css",
+      "Route": "Bless.Booking.App.tq85a8xnui.styles.css",
       "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bless.Booking.App.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -503,7 +503,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10562"
+          "Value": "11121"
         },
         {
           "Name": "Content-Type",
@@ -511,11 +511,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM=\""
+          "Value": "\"hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 21:12:57 GMT"
+          "Value": "Sat, 10 May 2025 23:25:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -525,7 +525,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u89g0nr96z"
+          "Value": "tq85a8xnui"
         },
         {
           "Name": "label",
@@ -533,7 +533,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MsHGiljPK9LU+eg9GLYu8t6W7IIKlXTkNyHL1VurvTM="
+          "Value": "sha256-hfXHP5QEX0kyYA1f0pa9Ym4srA8n478H/tItHWmiYN0="
         }
       ]
     },
