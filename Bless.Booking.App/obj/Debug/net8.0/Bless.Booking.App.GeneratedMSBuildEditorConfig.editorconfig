@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Cristopher Avendano/Documents/Bless.booking.app/Bless.Booking.App/Components/AgendarCitaComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZ2VuZGFyQ2l0YUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-nx3qd46dam
+
 [C:/Users/Cristopher Avendano/Documents/Bless.booking.app/Bless.Booking.App/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-foq4tdkpny
