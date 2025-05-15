@@ -2,32 +2,33 @@
 <div class="row justify-content-center gap-4 d-none d-md-flex">
     @foreach (var review in reviews)
     {
-        <div class="col-md-3 bg-white rounded shadow p-4 text-center">
-            @* Imagen de perfil *@
-            @if (!string.IsNullOrWhiteSpace(review.profile_photo_url))
-            {
-                <img src="@review.profile_photo_url" class="rounded-circle mb-3" width="70" height="70" alt="@review.author_name" onerror="this.style.display='none';" />
-            }
-            else
-            {
-                <img src="/img/default-user.png" class="rounded-circle mb-3" width="70" height="70" alt="Usuario sin imagen" />
-            }
-
-            <p class="text-muted">@review.Text</p>
-
-            <div class="text-warning mb-2">
-                @for (int i = 0; i < review.rating; i++)
+        <div class="col-md-3">
+            <div class="review-card">
+                @if (!string.IsNullOrWhiteSpace(review.profile_photo_url))
                 {
-                    <span>★</span>
+                    <img src="@review.profile_photo_url" class="rounded-circle mb-3" width="70" height="70" alt="@review.author_name" onerror="this.style.display='none';" />
                 }
-                @for (int i = review.rating; i < 5; i++)
+                else
                 {
-                    <span class="text-secondary">★</span>
+                    <img src="/img/default-user.png" class="rounded-circle mb-3" width="70" height="70" alt="Usuario sin imagen" />
                 }
+
+                <p class="text-muted">@review.Text</p>
+
+                <div class="text-warning mb-2">
+                    @for (int i = 0; i < review.rating; i++)
+                    {
+                        <span>★</span>
+                    }
+                    @for (int i = review.rating; i < 5; i++)
+                    {
+                        <span class="text-secondary">★</span>
+                    }
+                </div>
+
+                <strong>@review.author_name</strong><br />
+                <small class="text-muted">@review.TimeAsDateTime.ToString("dd/MM/yyyy")</small>
             </div>
-
-            <strong>@review.author_name</strong><br />
-            <small class="text-muted">@review.TimeAsDateTime.ToString("dd/MM/yyyy")</small>
         </div>
     }
 </div>
@@ -39,7 +40,7 @@
         {
             var review = reviews[i];
             <div class="carousel-item @(i == 0 ? "active" : "")">
-                <div class="bg-white rounded shadow p-4 mx-3 text-center">
+                <div class="review-card mx-3">
                     @if (!string.IsNullOrWhiteSpace(review.profile_photo_url))
                     {
                         <img src="@review.profile_photo_url" class="rounded-circle mb-3" width="70" height="70" alt="@review.author_name" onerror="this.style.display='none';" />

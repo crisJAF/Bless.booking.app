@@ -5,7 +5,7 @@
 
 <div class="home-hero row m-0 align-items-end justify-content-between">
     <!-- Contenido de texto -->
-    <div class="hero-text col-12 col-md-6 animate-fadein-left pb-5 ps-md-5">
+    <div class="hero-text col-12 col-md-6 pb-5 ps-md-5 @(mostrarAnimacion ? "animate-fadein-left" : "")">
         <img src="/img/bless-logo.png" alt="Logo Bless Barber Shop" class="mb-4 logo-bless" />
 
         <p class="text-white mb-2">Bienvenido a Bless Barber Shop</p>
@@ -35,15 +35,25 @@
 <section class="about-section d-flex align-items-center bg-white px-4">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
         <!-- Galería estilo collage -->
-        <div class="image-collage me-md-5 mb-4 mb-md-0">
-            <div class="d-flex gap-3 mb-3">
-                <img src="/img/barba-barbero.jpg" class="img-fluid collage-img" alt="Corte 1" />
-                <img src="/img/raya-barbero.jpg" class="img-fluid collage-img" alt="Corte 2" />
-            </div>
-            <div>
-                <img src="/img/cara-barbero.jpg" class="img-fluid collage-img-large" alt="Corte 3" />
+
+        <div class="container-fluid px-0 image-collage-responsive">
+            <div class="row g-3">
+                <!-- Columna izquierda (2 imágenes pequeñas) -->
+                <div class="col-12 col-md-4">
+                    <div class="d-flex d-md-block justify-content-center gap-3">
+                        <img src="/img/barba-barbero.jpg" class="collage-img-small rounded shadow" alt="Corte 1" />
+                        <img src="/img/raya-barbero.jpg" class="collage-img-small rounded shadow" alt="Corte 2" />
+                    </div>
+                </div>
+
+                <!-- Columna derecha (imagen grande) -->
+                <div class="col-12 col-md-8">
+                    <img src="/img/cara-barbero.jpg" class="img-fluid w-100 rounded shadow collage-img-large" alt="Corte 3" />
+                </div>
             </div>
         </div>
+
+
 
         <!-- Texto -->
         <div class="text-content text-md-start text-center ms-md-5 ps-md-3">
@@ -188,3 +198,16 @@
 }
 
 <AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="@(() => mostrarModal = false)" />
+
+ @code {
+    private bool mostrarAnimacion = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            mostrarAnimacion = true;
+            StateHasChanged(); // fuerza render para aplicar la clase
+        }
+    }
+}

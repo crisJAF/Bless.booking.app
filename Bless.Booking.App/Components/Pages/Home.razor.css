@@ -32,7 +32,11 @@ img {
     z-index: 10;
 }
 
-/* ANIMACIONES */
+.animate-fadein-left {
+    animation: fadeInLeft 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -43,26 +47,6 @@ img {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.animate-fadein-left {
-    animation: fadeInLeft 1s ease-out;
-}
-
-.animate-fadein-right {
-    animation: fadeInRight 1s ease-out;
 }
 
 /* HERO IMG */
@@ -89,24 +73,34 @@ img {
     padding-bottom: 4rem;
 }
 
-.image-collage {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-}
-
-.collage-img {
-    width: 150px;
+/* Imágenes pequeñas */
+.collage-img-small {
+    width: 48%;
+    max-width: 48%;
+    min-width: 140px;
+    object-fit: cover;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
 }
 
+/* Imagen grande */
 .collage-img-large {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    min-height: 240px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Escritorio: apila las imágenes pequeñas verticalmente */
+@media (min-width: 768px) {
+    .collage-img-small {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .collage-img-large {
+        min-height: 400px;
+    }
 }
 
 .leer-mas-btn {
@@ -124,7 +118,7 @@ img {
 /* BOOKING */
 .booking-section {
     background: url('/img/fondo-rayado.jpg') center center / cover no-repeat;
-    min-height: 50vh;
+    min-height: 100vh;
     padding: 4rem 2rem;
 }
 
@@ -176,10 +170,6 @@ img {
     .me-md-5, .pe-md-5 {
         padding-right: 1rem !important;
         margin-right: 0 !important;
-    }
-
-    .image-collage {
-        width: 100% !important;
     }
 
     .container,

@@ -39,22 +39,11 @@ namespace Bless.Booking.App.Components
         {
             if (Visible)
             {
-                if (cita.Fecha.HasValue && cita.Hora.HasValue)
-                {
-                    var fechaConHora = cita.Fecha.Value.Date + cita.Hora.Value;
-                    reservas = await reservaProxy.ObtenerHorariosDisponiblesAsync(1, fechaConHora);
-                    HorasDisponibles = reservas.Select(r => r.Hora).ToList();
-                }
 
                 cita = new();
                 exito = false;
                 horaStr = null;
             }
-        }
-
-        protected override async Task OnInitializedAsync()
-        {
-
         }
         public class CitaModel
         {
@@ -76,22 +65,38 @@ namespace Bless.Booking.App.Components
             [Required(ErrorMessage = "Seleccione una hora")]
             public TimeSpan? Hora { get; set; }
         }
-        private async Task OnFechaChanged(ChangeEventArgs e)
+        private async Task OnFechaChanged(DateTime? nuevaFecha)
         {
-            if (DateTime.TryParse(e.Value?.ToString(), out var fechaSeleccionada))
+            if (nuevaFecha.HasValue)
             {
-                cita.Fecha = fechaSeleccionada;
-
-                // Limpia hora previa y horas disponibles
-                cita.Hora = null;
                 horaStr = null;
                 HorasDisponibles.Clear();
 
-                var fechaConHora = fechaSeleccionada.Date; // Por ahora sin hora
-                reservas = await reservaProxy.ObtenerHorariosDisponiblesAsync(1, fechaConHora);
-                HorasDisponibles = reservas.Select(r => r.Hora).ToList();
+                try
+                {
+                    reservas = await reservaProxy.ObtenerHorariosDisponiblesAsync(1, nuevaFecha.Value.Date);
+                    HorasDisponibles = reservas.Select(r => r.Hora).ToList();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al obtener horarios: " + ex.Message);
+                }
 
-                StateHasChanged(); // Forzar renderizado para que se actualice el combo de horas
+                StateHasChanged();
+            }
+        }
+
+
+        private DateTime? fechaSeleccionada
+        {
+            get => cita.Fecha;
+            set
+            {
+                if (cita.Fecha != value)
+                {
+                    cita.Fecha = value;
+                    _ = OnFechaChanged(value);
+                }
             }
         }
 

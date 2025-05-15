@@ -273,7 +273,11 @@ img[b-suh5pbir8t] {
     z-index: 10;
 }
 
-/* ANIMACIONES */
+.animate-fadein-left[b-suh5pbir8t] {
+    animation: fadeInLeft-b-suh5pbir8t 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
 @keyframes fadeInLeft-b-suh5pbir8t {
     from {
         opacity: 0;
@@ -284,26 +288,6 @@ img[b-suh5pbir8t] {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-@keyframes fadeInRight-b-suh5pbir8t {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.animate-fadein-left[b-suh5pbir8t] {
-    animation: fadeInLeft-b-suh5pbir8t 1s ease-out;
-}
-
-.animate-fadein-right[b-suh5pbir8t] {
-    animation: fadeInRight-b-suh5pbir8t 1s ease-out;
 }
 
 /* HERO IMG */
@@ -330,24 +314,34 @@ img[b-suh5pbir8t] {
     padding-bottom: 4rem;
 }
 
-.image-collage[b-suh5pbir8t] {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-}
-
-.collage-img[b-suh5pbir8t] {
-    width: 150px;
+/* Imágenes pequeñas */
+.collage-img-small[b-suh5pbir8t] {
+    width: 48%;
+    max-width: 48%;
+    min-width: 140px;
+    object-fit: cover;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
 }
 
+/* Imagen grande */
 .collage-img-large[b-suh5pbir8t] {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    min-height: 240px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Escritorio: apila las imágenes pequeñas verticalmente */
+@media (min-width: 768px) {
+    .collage-img-small[b-suh5pbir8t] {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .collage-img-large[b-suh5pbir8t] {
+        min-height: 400px;
+    }
 }
 
 .leer-mas-btn[b-suh5pbir8t] {
@@ -365,7 +359,7 @@ img[b-suh5pbir8t] {
 /* BOOKING */
 .booking-section[b-suh5pbir8t] {
     background: url('/img/fondo-rayado.jpg') center center / cover no-repeat;
-    min-height: 50vh;
+    min-height: 100vh;
     padding: 4rem 2rem;
 }
 
@@ -419,10 +413,6 @@ img[b-suh5pbir8t] {
         margin-right: 0 !important;
     }
 
-    .image-collage[b-suh5pbir8t] {
-        width: 100% !important;
-    }
-
     .container[b-suh5pbir8t],
     .container-fluid[b-suh5pbir8t] {
         padding-left: 1rem;
@@ -439,3 +429,32 @@ img[b-suh5pbir8t] {
 section[b-suh5pbir8t] {
     overflow-x: hidden;
 }
+/* _content/Bless.Booking.App/Components/ReviewsComponent.razor.rz.scp.css */
+.review-card[b-3a2x1gduox] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* centra todo horizontalmente */
+    height: 100%;
+    min-height: 350px;
+    max-height: 350px;
+    overflow: hidden;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+    .review-card img[b-3a2x1gduox] {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .review-card p[b-3a2x1gduox] {
+        flex-grow: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }

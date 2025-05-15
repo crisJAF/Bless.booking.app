@@ -48,15 +48,14 @@
                             <ValidationMessage For="@(() => cita.Servicio)" />
                         </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Fecha</label>
-                            <InputDate class="form-control" @bind-value="cita.Fecha" @onchange="OnFechaChanged" />
-                            <ValidationMessage For="@(() => cita.Fecha)" />
-                        </div>
+                        <InputDate TValue="DateTime?" class="form-control"
+                                   @bind-value="fechaSeleccionada" />
+                        <ValidationMessage For="@(() => cita.Fecha)" />
+
 
                         <div class="mb-4">
                             <label class="form-label">Hora</label>
-                            <InputSelect class="form-select" @bind-Value="horaStr">
+                            <InputSelect class="form-select" @bind-value="horaStr">
                                 <option value="">Seleccione una hora</option>
                                 @foreach (var hora in HorasDisponibles)
                                 {
