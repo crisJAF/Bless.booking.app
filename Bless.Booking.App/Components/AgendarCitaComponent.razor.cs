@@ -1,4 +1,5 @@
-﻿using Bless.Proxy;
+﻿using Bless.Models;
+using Bless.Proxy;
 using Microsoft.AspNetCore.Components;
 using System.ComponentModel.DataAnnotations;
 
@@ -11,12 +12,16 @@ namespace Bless.Booking.App.Components
 
         [Inject]
         private ReservaProxy reservaProxy { get; set; }
+        [Inject]
+        private BarberoProxy barberoProxy { get; set; } = default!;
 
         private CitaModel cita = new();
         private bool exito = false;
         private string horaStr;
         private List<TimeSpan> HorasDisponibles = new();
         private List<Bless.Models.ReservaRequest> reservas = new();
+        private List<Bless.Models.Barbero> barberos = new(); // Especificamos el namespace del modelo
+
 
         private async Task Cerrar()
         {
@@ -45,6 +50,10 @@ namespace Bless.Booking.App.Components
                 horaStr = null;
             }
         }
+        protected override async Task OnInitializedAsync()
+        {
+            barberos = await barberoProxy.ObtenerBarberosAsync();
+        }
         public class CitaModel
         {
             [Required(ErrorMessage = "El nombre es obligatorio")]
@@ -55,6 +64,9 @@ namespace Bless.Booking.App.Components
 
             [Required(ErrorMessage = "El teléfono es obligatorio")]
             public string Telefono { get; set; }
+
+            [Required(ErrorMessage = "Seleccione un barbero")]
+            public int? Barbero { get; set; }
 
             [Required(ErrorMessage = "Seleccione un servicio")]
             public string Servicio { get; set; }

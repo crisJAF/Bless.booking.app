@@ -1,28 +1,28 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/app.7ntkmzn1yd.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"7ntkmzn1yd"},{"Name":"integrity","Value":"sha256-7ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU="},{"Name":"label","Value":"_content/Bless.Booking.App/app.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2647"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 18:01:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/app.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2591"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 15:56:44 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2647"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 18:01:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/app.da95v2qkru.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/Bless.Booking.App.8ffk4uf84f.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.8ffk4uf84f.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"da95v2qkru"},{"Name":"integrity","Value":"sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="},{"Name":"label","Value":"_content/Bless.Booking.App/app.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2591"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 15:56:44 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8ffk4uf84f"},{"Name":"integrity","Value":"sha256-FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg="},{"Name":"label","Value":"_content/Bless.Booking.App/Bless.Booking.App.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7460"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 18:01:36 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/Bless.Booking.App.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.zetssg0xqy.bundle.scp.css'))</AssetFile>
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.8ffk4uf84f.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP\u002B6B5E4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"11814"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP\u002B6B5E4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 14 May 2025 22:10:53 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/Bless.Booking.App.zetssg0xqy.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Bless.Booking.App.zetssg0xqy.bundle.scp.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zetssg0xqy"},{"Name":"integrity","Value":"sha256-FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP\u002B6B5E4="},{"Name":"label","Value":"_content/Bless.Booking.App/Bless.Booking.App.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"11814"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP\u002B6B5E4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 14 May 2025 22:10:53 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7460"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 18:01:36 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/bootstrap/bootstrap.min.bpk8xqwxhs.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\bootstrap\bootstrap.min.css'))</AssetFile>
@@ -47,6 +47,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"449111"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 15:56:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/css/Header.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Header.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ldPBUJO4R7SVxIYvMGLS2G4OuSbi\u002BD\u002B9zMlMzH\u002BsKhU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"136"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ldPBUJO4R7SVxIYvMGLS2G4OuSbi\u002BD\u002B9zMlMzH\u002BsKhU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 17:59:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/css/Header.nxzufbevum.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Header.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nxzufbevum"},{"Name":"integrity","Value":"sha256-ldPBUJO4R7SVxIYvMGLS2G4OuSbi\u002BD\u002B9zMlMzH\u002BsKhU="},{"Name":"label","Value":"_content/Bless.Booking.App/css/Header.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"136"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ldPBUJO4R7SVxIYvMGLS2G4OuSbi\u002BD\u002B9zMlMzH\u002BsKhU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 17:59:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/css/Home.74r8ndk5xx.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Home.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"74r8ndk5xx"},{"Name":"integrity","Value":"sha256-uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg="},{"Name":"label","Value":"_content/Bless.Booking.App/css/Home.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3558"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 18:01:25 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/css/Home.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Home.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3558"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 18:01:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Bless.Booking.App/favicon.ifv42okdf2.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>

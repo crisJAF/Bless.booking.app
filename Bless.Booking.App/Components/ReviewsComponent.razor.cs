@@ -8,6 +8,7 @@ namespace Bless.Booking.App.Components
         [Inject]
         private ReviewsProxy reviewsProxy { get; set; } = default!;
 
+
         private List<Bless.Models.Reviews> reviews = new(); // Especificamos el namespace del modelo
 
         protected override async Task OnInitializedAsync()

@@ -1,3 +1,7 @@
+@import "css/Header.css";
+@import "css/Home.css";
+
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

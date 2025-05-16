@@ -35,6 +35,19 @@
                         </div>
 
                         <div class="mb-3">
+                            <label class="form-label">Barbero</label>
+                            <InputSelect class="form-select" @bind-Value="cita.Barbero">
+                                <option value="">Seleccione un barbero</option>
+                                @foreach (var barbero in barberos)
+                                {
+                                    <option value="@barbero.barberoId">@barbero.nombre</option>
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => cita.Barbero)" />
+                        </div>
+
+
+                        <div class="mb-3">
                             <label class="form-label">Servicio</label>
                             <InputSelect class="form-select" @bind-value="cita.Servicio">
                                 <option value="">Seleccione un servicio</option>

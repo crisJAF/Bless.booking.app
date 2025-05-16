@@ -1,6 +1,8 @@
 wwwroot\app.css
 wwwroot\bootstrap\bootstrap.min.css
 wwwroot\bootstrap\bootstrap.min.css.map
+wwwroot\css\Header.css
+wwwroot\css\Home.css
 wwwroot\favicon.png
 wwwroot\img\barba-barbero.jpg
 wwwroot\img\bless-logo.png

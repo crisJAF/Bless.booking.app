@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GE2kDXheo71sudKvcLh5MfZnNTWGSqIZM0Scig8+D1M=",
+  "Hash": "wodTFhG2KZ306+9kfqccHQXoXIKexno/682pfARcTAI=",
   "Source": "Bless.Booking.App",
   "BasePath": "_content/Bless.Booking.App",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "zetssg0xqy",
-      "Integrity": "FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4=",
+      "Fingerprint": "8ffk4uf84f",
+      "Integrity": "FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bless.Booking.App.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "zetssg0xqy",
-      "Integrity": "FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4=",
+      "Fingerprint": "8ffk4uf84f",
+      "Integrity": "FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bless.Booking.App.bundle.scp.css"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "da95v2qkru",
-      "Integrity": "u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=",
+      "Fingerprint": "7ntkmzn1yd",
+      "Integrity": "7ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -120,6 +120,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\css\\Header.css",
+      "SourceId": "Bless.Booking.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\",
+      "BasePath": "_content/Bless.Booking.App",
+      "RelativePath": "css/Header#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nxzufbevum",
+      "Integrity": "ldPBUJO4R7SVxIYvMGLS2G4OuSbi+D+9zMlMzH+sKhU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Header.css"
+    },
+    {
+      "Identity": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\css\\Home.css",
+      "SourceId": "Bless.Booking.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\",
+      "BasePath": "_content/Bless.Booking.App",
+      "RelativePath": "css/Home#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "74r8ndk5xx",
+      "Integrity": "uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home.css"
     },
     {
       "Identity": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\favicon.png",
@@ -292,6 +334,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "app.7ntkmzn1yd.css",
+      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2647"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 18:01:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7ntkmzn1yd"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU="
+        }
+      ]
+    },
+    {
       "Route": "app.css",
       "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\app.css",
       "Selectors": [],
@@ -302,7 +389,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2591"
+          "Value": "2647"
         },
         {
           "Name": "Content-Type",
@@ -310,11 +397,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\""
+          "Value": "\"7ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 15:56:44 GMT"
+          "Value": "Thu, 15 May 2025 18:01:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -324,13 +411,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="
+          "Value": "sha256-7ToKAznqTveT4rlU6S/Oqfx2WG11LCGOyknRuRO6AUU="
         }
       ]
     },
     {
-      "Route": "app.da95v2qkru.css",
-      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\app.css",
+      "Route": "Bless.Booking.App.8ffk4uf84f.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bless.Booking.App.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -339,7 +426,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2591"
+          "Value": "7460"
         },
         {
           "Name": "Content-Type",
@@ -347,11 +434,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\""
+          "Value": "\"FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 15:56:44 GMT"
+          "Value": "Thu, 15 May 2025 18:01:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -361,15 +448,60 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "da95v2qkru"
+          "Value": "8ffk4uf84f"
         },
         {
           "Name": "label",
-          "Value": "app.css"
+          "Value": "Bless.Booking.App.bundle.scp.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="
+          "Value": "sha256-FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg="
+        }
+      ]
+    },
+    {
+      "Route": "Bless.Booking.App.8ffk4uf84f.styles.css",
+      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bless.Booking.App.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7460"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 18:01:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8ffk4uf84f"
+        },
+        {
+          "Name": "label",
+          "Value": "Bless.Booking.App.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg="
         }
       ]
     },
@@ -384,7 +516,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11814"
+          "Value": "7460"
         },
         {
           "Name": "Content-Type",
@@ -392,11 +524,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4=\""
+          "Value": "\"FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 22:10:53 GMT"
+          "Value": "Thu, 15 May 2025 18:01:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -406,7 +538,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4="
+          "Value": "sha256-FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg="
         }
       ]
     },
@@ -421,7 +553,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11814"
+          "Value": "7460"
         },
         {
           "Name": "Content-Type",
@@ -429,11 +561,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4=\""
+          "Value": "\"FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 22:10:53 GMT"
+          "Value": "Thu, 15 May 2025 18:01:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -443,97 +575,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4="
-        }
-      ]
-    },
-    {
-      "Route": "Bless.Booking.App.zetssg0xqy.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bless.Booking.App.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "11814"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 22:10:53 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zetssg0xqy"
-        },
-        {
-          "Name": "label",
-          "Value": "Bless.Booking.App.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4="
-        }
-      ]
-    },
-    {
-      "Route": "Bless.Booking.App.zetssg0xqy.styles.css",
-      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bless.Booking.App.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "11814"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 22:10:53 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zetssg0xqy"
-        },
-        {
-          "Name": "label",
-          "Value": "Bless.Booking.App.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-FWBLmwMRQ/bJCWoJEqhZZgy3kr4Ze4cMwXxgP+6B5E4="
+          "Value": "sha256-FDco7Rrscf9kg5PgNFVFO8Jjw8aCbY4fxBxaM6MNNAg="
         }
       ]
     },
@@ -698,6 +740,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/Header.css",
+      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\css\\Header.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ldPBUJO4R7SVxIYvMGLS2G4OuSbi+D+9zMlMzH+sKhU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 17:59:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ldPBUJO4R7SVxIYvMGLS2G4OuSbi+D+9zMlMzH+sKhU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Header.nxzufbevum.css",
+      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\css\\Header.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ldPBUJO4R7SVxIYvMGLS2G4OuSbi+D+9zMlMzH+sKhU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 17:59:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nxzufbevum"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Header.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ldPBUJO4R7SVxIYvMGLS2G4OuSbi+D+9zMlMzH+sKhU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Home.74r8ndk5xx.css",
+      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\css\\Home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3558"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 18:01:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "74r8ndk5xx"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Home.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg="
+        }
+      ]
+    },
+    {
+      "Route": "css/Home.css",
+      "AssetFile": "C:\\Users\\Cristopher Avendano\\Documents\\Bless.booking.app\\Bless.Booking.App\\wwwroot\\css\\Home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3558"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 18:01:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uXm4AUoyn4HG/xBi2dYBuDv4c99eIyvjpOHRsFd0rNg="
         }
       ]
     },

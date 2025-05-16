@@ -12,6 +12,7 @@ builder.Services.AddScoped<ServiceConfiguration>();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ReviewsProxy>();
 builder.Services.AddScoped<ReservaProxy>();
+builder.Services.AddScoped<BarberoProxy>();
 builder.Services.AddServerSideBlazor()
     .AddCircuitOptions(options => { options.DetailedErrors = true; });
 

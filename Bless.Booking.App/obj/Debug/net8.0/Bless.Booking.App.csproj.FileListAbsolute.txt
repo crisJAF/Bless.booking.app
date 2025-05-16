@@ -15,7 +15,6 @@ C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\D
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Booking.App.sourcelink.json
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
-C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\bundle\Bless.Booking.App.styles.css
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\projectbundle\Bless.Booking.App.bundle.scp.css
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\staticwebassets.build.json
@@ -33,7 +32,6 @@ C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\D
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Booking.App.pdb
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\Bless.Booking.App.genruntimeconfig.cache
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\ref\Bless.Booking.App.dll
-C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Pages\Header.razor.rz.scp.css
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\obj\Debug\net8.0\scopedcss\Components\Pages\Footer.razor.rz.scp.css
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
 C:\Users\Cristopher Avendano\Documents\Bless.booking.app\Bless.Booking.App\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
