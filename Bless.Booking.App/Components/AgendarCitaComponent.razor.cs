@@ -1,6 +1,7 @@
 ﻿using Bless.Models;
 using Bless.Proxy;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bless.Booking.App.Components
@@ -14,14 +15,19 @@ namespace Bless.Booking.App.Components
         private ReservaProxy reservaProxy { get; set; }
         [Inject]
         private BarberoProxy barberoProxy { get; set; } = default!;
+        [Inject]
+        private ServicioProxy servicioProxy { get; set; } = default!;
+        [Inject]
+        private IJSRuntime JS { get; set; } = default!;
 
         private CitaModel cita = new();
         private bool exito = false;
+        private bool captchaValidado = false;
         private string horaStr;
         private List<TimeSpan> HorasDisponibles = new();
         private List<Bless.Models.ReservaRequest> reservas = new();
-        private List<Bless.Models.Barbero> barberos = new(); // Especificamos el namespace del modelo
-
+        private List<Bless.Models.Barbero> barberos = new();
+        private List<Bless.Models.Servicio> servicios = new();
 
         private async Task Cerrar()
         {
@@ -44,39 +50,21 @@ namespace Bless.Booking.App.Components
         {
             if (Visible)
             {
-
                 cita = new();
                 exito = false;
                 horaStr = null;
+
+                await Task.Delay(100);
+                await RenderizarRecaptcha();
             }
         }
+
         protected override async Task OnInitializedAsync()
         {
             barberos = await barberoProxy.ObtenerBarberosAsync();
+            servicios = await servicioProxy.ObtenerServiciosAsync();
         }
-        public class CitaModel
-        {
-            [Required(ErrorMessage = "El nombre es obligatorio")]
-            public string Nombre { get; set; }
 
-            [EmailAddress(ErrorMessage = "Correo no válido")]
-            public string Email { get; set; }
-
-            [Required(ErrorMessage = "El teléfono es obligatorio")]
-            public string Telefono { get; set; }
-
-            [Required(ErrorMessage = "Seleccione un barbero")]
-            public int? Barbero { get; set; }
-
-            [Required(ErrorMessage = "Seleccione un servicio")]
-            public string Servicio { get; set; }
-
-            [Required(ErrorMessage = "Seleccione una fecha")]
-            public DateTime? Fecha { get; set; }
-
-            [Required(ErrorMessage = "Seleccione una hora")]
-            public TimeSpan? Hora { get; set; }
-        }
         private async Task OnFechaChanged(DateTime? nuevaFecha)
         {
             if (nuevaFecha.HasValue)
@@ -98,7 +86,6 @@ namespace Bless.Booking.App.Components
             }
         }
 
-
         private DateTime? fechaSeleccionada
         {
             get => cita.Fecha;
@@ -112,6 +99,28 @@ namespace Bless.Booking.App.Components
             }
         }
 
-    }
+        private async Task RenderizarRecaptcha()
+        {
+            await JS.InvokeVoidAsync("grecaptcha.render", "recaptcha-container", new
+            {
+                sitekey = "6Legsj0rAAAAAK3IxTu5GwSgfD2gjQ5rlxeEoSCF",
+                callback = "onRecaptchaSuccess"
+            });
+        }
 
+        [JSInvokable]
+        public void RecaptchaValidado()
+        {
+            captchaValidado = true;
+            StateHasChanged();
+        }
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                await JS.InvokeVoidAsync("initRecaptchaCallback", DotNetObjectReference.Create(this));
+            }
+        }
+    }
 }

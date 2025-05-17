@@ -46,24 +46,24 @@
                             <ValidationMessage For="@(() => cita.Barbero)" />
                         </div>
 
-
                         <div class="mb-3">
                             <label class="form-label">Servicio</label>
                             <InputSelect class="form-select" @bind-value="cita.Servicio">
                                 <option value="">Seleccione un servicio</option>
-                                <option>Corte Moderno</option>
-                                <option>Lavado</option>
-                                <option>Color</option>
-                                <option>Recorte Facial</option>
-                                <option>Afeitado</option>
-                                <option>Masaje</option>
+                                @foreach (var servicio in servicios)
+                                {
+                                    <option value="@servicio.ServicioId">@servicio.Nombre</option>
+                                }
                             </InputSelect>
                             <ValidationMessage For="@(() => cita.Servicio)" />
                         </div>
 
-                        <InputDate TValue="DateTime?" class="form-control"
-                                   @bind-value="fechaSeleccionada" />
-                        <ValidationMessage For="@(() => cita.Fecha)" />
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <InputDate TValue="DateTime?" class="form-control"
+                                       @bind-value="fechaSeleccionada" />
+                            <ValidationMessage For="@(() => cita.Fecha)" />
+                        </div>
 
 
                         <div class="mb-4">
@@ -78,7 +78,11 @@
                             <ValidationMessage For="@(() => cita.Hora)" />
                         </div>
 
-                        <button type="submit" class="btn btn-dark px-4 py-2 fw-semibold">Reservar Cita</button>
+                        <div class="mb-3">
+                            <div id="recaptcha-container"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark px-4 py-2 fw-semibold" disabled="@(!captchaValidado)">Reservar Cita</button>
 
                         @if (exito)
                         {
