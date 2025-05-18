@@ -1,6 +1,4 @@
-﻿@using System.ComponentModel.DataAnnotations
-@using Microsoft.AspNetCore.Components.Forms
-
+﻿
 @if (Visible)
 {
     <div class="modal-backdrop fade show"></div>
@@ -18,25 +16,25 @@
 
                         <div class="mb-3">
                             <label class="form-label">Nombre completo</label>
-                            <InputText class="form-control" @bind-value="cita.Nombre" />
+                            <InputText class="form-control" @bind-Value="cita.Nombre" />
                             <ValidationMessage For="@(() => cita.Nombre)" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Correo electrónico</label>
-                            <InputText type="email" class="form-control" @bind-value="cita.Email" />
+                            <InputText type="email" class="form-control" @bind-Value="cita.Email" />
                             <ValidationMessage For="@(() => cita.Email)" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Teléfono</label>
-                            <InputText class="form-control" @bind-value="cita.Telefono" />
+                            <InputText class="form-control" @bind-Value="cita.Telefono" />
                             <ValidationMessage For="@(() => cita.Telefono)" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Servicio</label>
-                            <InputSelect class="form-select" @bind-value="cita.Servicio">
+                            <InputSelect class="form-select" @bind-Value="cita.Servicio" TValue="string">
                                 <option value="">Seleccione un servicio</option>
                                 <option>Corte Moderno</option>
                                 <option>Lavado</option>
@@ -50,7 +48,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Fecha</label>
-                            <InputDate class="form-control" @bind-value="cita.Fecha" />
+                            <InputDate class="form-control" @bind-Value="cita.Fecha" TValue="DateTime"/>
                             <ValidationMessage For="@(() => cita.Fecha)" />
                         </div>
 
@@ -79,78 +77,4 @@
             </div>
         </div>
     </div>
-}
-
-@code {
-    [Parameter] public bool Visible { get; set; }
-    [Parameter] public EventCallback OnClose { get; set; }
-
-    private CitaModel cita = new();
-    private bool exito = false;
-    private string horaStr;
-    private List<TimeSpan> HorasDisponibles = new();
-
-    private async Task Cerrar()
-    {
-        exito = false;
-        cita = new();
-        horaStr = null;
-        await OnClose.InvokeAsync();
-    }
-
-    private void EnviarFormulario()
-    {
-        if (TimeSpan.TryParse(horaStr, out var hora))
-        {
-            cita.Hora = hora;
-            exito = true;
-        }
-    }
-
-    protected override Task OnParametersSetAsync()
-    {
-        if (Visible)
-        {
-            HorasDisponibles = new List<TimeSpan>
-            {
-                new TimeSpan(9, 0, 0),
-                new TimeSpan(9, 30, 0),
-                new TimeSpan(10, 0, 0),
-                new TimeSpan(10, 30, 0),
-                new TimeSpan(11, 0, 0),
-                new TimeSpan(11, 30, 0),
-                new TimeSpan(14, 0, 0),
-                new TimeSpan(14, 30, 0),
-                new TimeSpan(15, 0, 0)
-            };
-
-            cita = new();
-            exito = false;
-            horaStr = null;
-        }
-
-        return base.OnParametersSetAsync();
-    }
-
-    public class CitaModel
-    {
-        [Required(ErrorMessage = "El nombre es obligatorio")]
-        public string Nombre { get; set; }
-
-        [Required(ErrorMessage = "El correo es obligatorio")]
-        [EmailAddress(ErrorMessage = "Correo no válido")]
-        public string Email { get; set; }
-
-        [Required(ErrorMessage = "El teléfono es obligatorio")]
-        public string Telefono { get; set; }
-
-        [Required(ErrorMessage = "Seleccione un servicio")]
-        public string Servicio { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una fecha")]
-        public DateTime? Fecha { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una hora")]
-        public TimeSpan? Hora { get; set; }
-    }
 }
