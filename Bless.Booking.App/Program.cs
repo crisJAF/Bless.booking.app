@@ -10,6 +10,12 @@ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ReviewsProxy>();
 
+builder.Services.AddServerSideBlazor().AddCircuitOptions(options =>
+{
+    options.DetailedErrors = true;
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

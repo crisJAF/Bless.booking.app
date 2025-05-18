@@ -1,0 +1,80 @@
+﻿
+@if (Visible)
+{
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal d-block" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-4 bg-white text-dark rounded">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">Agenda tu Cita</h5>
+                    <button type="button" class="btn-close" @onclick="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@cita" OnValidSubmit="EnviarFormulario">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="mb-3">
+                            <label class="form-label">Nombre completo</label>
+                            <InputText class="form-control" @bind-Value="cita.Nombre" />
+                            <ValidationMessage For="@(() => cita.Nombre)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Correo electrónico</label>
+                            <InputText type="email" class="form-control" @bind-Value="cita.Email" />
+                            <ValidationMessage For="@(() => cita.Email)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <InputText class="form-control" @bind-Value="cita.Telefono" />
+                            <ValidationMessage For="@(() => cita.Telefono)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Servicio</label>
+                            <InputSelect class="form-select" @bind-Value="cita.Servicio" TValue="string">
+                                <option value="">Seleccione un servicio</option>
+                                <option>Corte Moderno</option>
+                                <option>Lavado</option>
+                                <option>Color</option>
+                                <option>Recorte Facial</option>
+                                <option>Afeitado</option>
+                                <option>Masaje</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => cita.Servicio)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <InputDate class="form-control" @bind-Value="cita.Fecha" TValue="DateTime"/>
+                            <ValidationMessage For="@(() => cita.Fecha)" />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Hora</label>
+                            <InputSelect class="form-select" @bind-Value="horaStr">
+                                <option value="">Seleccione una hora</option>
+                                @foreach (var hora in HorasDisponibles)
+                                {
+                                    <option value="@hora.ToString(@"hh\:mm")">@hora.ToString(@"hh\:mm")</option>
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => cita.Hora)" />
+                        </div>
+
+                        <button type="submit" class="btn btn-dark px-4 py-2 fw-semibold">Reservar Cita</button>
+
+                        @if (exito)
+                        {
+                            <div class="alert alert-success mt-4">
+                                ¡Tu cita ha sido agendada exitosamente!
+                            </div>
+                        }
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+}
