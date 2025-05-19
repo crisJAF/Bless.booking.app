@@ -9,6 +9,9 @@ builder.Services.AddRazorComponents()
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ReviewsProxy>();
+builder.Services.AddScoped<BarberosProxy>();
+builder.Services.AddScoped<ServiciosProxy>();
+builder.Services.AddScoped<ReservaProxy>();
 
 builder.Services.AddServerSideBlazor().AddCircuitOptions(options =>
 {
