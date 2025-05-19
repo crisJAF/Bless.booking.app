@@ -1,4 +1,5 @@
-﻿
+﻿@rendermode InteractiveServer
+
 @if (Visible)
 {
     <div class="modal-backdrop fade show"></div>
@@ -11,7 +12,7 @@
                 </div>
                 <div class="modal-body">
                     <EditForm Model="@cita" OnValidSubmit="EnviarFormulario">
-                        <DataAnnotationsValidator />
+                        @* <DataAnnotationsValidator /> *@
                         <ValidationSummary />
 
                         <div class="mb-3">
@@ -22,8 +23,8 @@
 
                         <div class="mb-3">
                             <label class="form-label">Correo electrónico</label>
-                            <InputText type="email" class="form-control" @bind-Value="cita.Email" />
-                            <ValidationMessage For="@(() => cita.Email)" />
+                            <InputText type="email" class="form-control" @bind-Value="cita.Correo" />
+                            <ValidationMessage For="@(() => cita.Correo)" />
                         </div>
 
                         <div class="mb-3">
@@ -33,22 +34,39 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Servicio</label>
-                            <InputSelect class="form-select" @bind-Value="cita.Servicio" TValue="string">
+                            <label class="form-label">Barberos</label>
+                            <InputSelect class="form-select" @bind-Value="cita.BarberoID">
                                 <option value="">Seleccione un servicio</option>
-                                <option>Corte Moderno</option>
-                                <option>Lavado</option>
-                                <option>Color</option>
-                                <option>Recorte Facial</option>
-                                <option>Afeitado</option>
-                                <option>Masaje</option>
+                                @foreach(var barbero in listBarberos)
+                                {
+                                    <option value="@barbero.barberoId">@barbero.nombre</option>
+                                }
+
                             </InputSelect>
-                            <ValidationMessage For="@(() => cita.Servicio)" />
+                            @* <ValidationMessage For="@(() => cita.BarberoID)" /> *@
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Servicio</label>
+                            <InputSelect class="form-select" @bind-Value="cita.ServicioId" TValue="int">
+                                <option value="">Seleccione un servicio</option>
+                                @foreach (var servicio in listServicios)
+                                {
+                                    <option value="@servicio.ServicioId">@servicio.Nombre</option>
+                                }
+                            </InputSelect>
+                            @* <ValidationMessage For="@(() => cita.ServicioId)" /> *@
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Fecha</label>
-                            <InputDate class="form-control" @bind-Value="cita.Fecha" TValue="DateTime"/>
+                            <InputDate TValue="DateTime"
+                                       class="form-control"
+                                       Value="cita.Fecha"
+                                       ValueChanged="@(async (DateTime nuevaFecha) => await OnFechaChanged(nuevaFecha))"
+                                       ValueExpression="@(() => cita.Fecha)" />
+
+
                             <ValidationMessage For="@(() => cita.Fecha)" />
                         </div>
 
@@ -56,9 +74,9 @@
                             <label class="form-label">Hora</label>
                             <InputSelect class="form-select" @bind-Value="horaStr">
                                 <option value="">Seleccione una hora</option>
-                                @foreach (var hora in HorasDisponibles)
+                                @foreach (var hora in listHorarioDisponible)
                                 {
-                                    <option value="@hora.ToString(@"hh\:mm")">@hora.ToString(@"hh\:mm")</option>
+                                    <option value="@hora.HoraDesde.ToString(@"hh\:mm")">@hora.HoraDesde.ToString(@"hh\:mm")</option>
                                 }
                             </InputSelect>
                             <ValidationMessage For="@(() => cita.Hora)" />
