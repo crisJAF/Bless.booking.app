@@ -88,26 +88,41 @@ img {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
-
 .image-collage {
-    width: 450px;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.collage-img {
-    width: 150px;
-    height: auto;
+.collage-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.collage-img-small,
+.collage-img-large {
+    width: 100%;
     border-radius: 8px;
+    object-fit: cover;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.collage-img-large {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+/* Distribución para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .collage-img-small {
+        width: calc(50% - 0.5rem);
+        height: 200px;
+    }
+
+    .collage-img-large {
+        height: 300px;
+    }
 }
+
 
 .leer-mas-btn {
     transition: all 0.3s ease-in-out;
@@ -121,10 +136,11 @@ img {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
+
 /* BOOKING */
 .booking-section {
     background: url('/img/fondo-rayado.jpg') center center / cover no-repeat;
-    min-height: 50vh;
+    min-height: 100vh;
     padding: 4rem 2rem;
 }
 

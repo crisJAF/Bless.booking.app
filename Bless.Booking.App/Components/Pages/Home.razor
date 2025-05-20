@@ -5,7 +5,7 @@
 
 <div class="home-hero row m-0 align-items-end justify-content-between">
     <!-- Contenido de texto -->
-    <div class="hero-text col-12 col-md-6 animate-fadein-left pb-5 ps-md-5">
+    <div class="hero-text col-12 col-md-6 @(animacionActivada ? "animate-fadein-left" : "") pb-5 ps-md-5">
         <img src="/img/bless-logo.png" alt="Logo Bless Barber Shop" class="mb-4 logo-bless" />
 
         <p class="text-white mb-2">Bienvenido a Bless Barber Shop</p>
@@ -35,15 +35,18 @@
 <section class="about-section d-flex align-items-center bg-white px-4">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
         <!-- Galería estilo collage -->
-        <div class="image-collage me-md-5 mb-4 mb-md-0">
-            <div class="d-flex gap-3 mb-3">
-                <img src="/img/barba-barbero.jpg" class="img-fluid collage-img" alt="Corte 1" />
-                <img src="/img/raya-barbero.jpg" class="img-fluid collage-img" alt="Corte 2" />
+        <div class="image-collage">
+            <!-- Fila de dos imágenes pequeñas -->
+            <div class="collage-row">
+                <img src="/img/barba-barbero.jpg" class="collage-img-small" alt="Corte 1" />
+                <img src="/img/raya-barbero.jpg" class="collage-img-small" alt="Corte 2" />
             </div>
-            <div>
-                <img src="/img/cara-barbero.jpg" class="img-fluid collage-img-large" alt="Corte 3" />
-            </div>
+
+            <!-- Imagen grande debajo -->
+            <img src="/img/cara-barbero.jpg" class="collage-img-large" alt="Corte 3" />
         </div>
+
+
 
         <!-- Texto -->
         <div class="text-content text-md-start text-center ms-md-5 ps-md-3">
@@ -185,6 +188,10 @@
 </section>
 @code {
     private bool mostrarModal = false;
+    private void CerrarModal()
+    {
+        mostrarModal = false;
+    }
 }
 
-<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="@(() => mostrarModal = false)" />
+<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="CerrarModal" />

@@ -81,8 +81,11 @@
                             </InputSelect>
                             <ValidationMessage For="@(() => cita.Hora)" />
                         </div>
+                        <div class="mb-3">
+                            <div id="recaptcha-container"></div>
+                        </div>
 
-                        <button type="submit" class="btn btn-dark px-4 py-2 fw-semibold">Reservar Cita</button>
+                        <button type="submit" class="btn btn-dark px-4 py-2 fw-semibold" disabled="@(!captchaValidado)">Reservar Cita</button>
 
                         @if (exito)
                         {
