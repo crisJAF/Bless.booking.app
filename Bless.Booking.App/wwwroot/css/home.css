@@ -17,7 +17,6 @@ img {
 /* HERO */
 .home-hero {
     min-height: 100vh;
-    background: url('img/fondo-textura-grun.jpg') no-repeat center center;
     background-size: cover;
     background-color: #000;
     padding-bottom: 0;
