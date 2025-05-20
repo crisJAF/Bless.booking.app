@@ -63,7 +63,7 @@
     </div>
 </section>
 
-<section class="booking-section d-flex align-items-center text-white">
+<section id="contacto" class="booking-section d-flex align-items-center text-white">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center w-100">
         <!-- Texto principal -->
         <div class="booking-text text-center text-md-start mb-4 mb-md-0">
@@ -193,12 +193,5 @@
         </div>
     </div>
 </section>
-@code {
-    private bool mostrarModal = false;
-    private void CerrarModal()
-    {
-        mostrarModal = false;
-    }
-}
 
 <AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="CerrarModal" />
