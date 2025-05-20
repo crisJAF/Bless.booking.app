@@ -1,4 +1,6 @@
-﻿<footer class="footer bg-black text-white pt-5 pb-4 px-4">
+﻿@rendermode InteractiveServer
+
+<footer class="footer bg-black text-white pt-5 pb-4 px-4">
     <div class="container">
         <div class="row gy-4">
             <!-- Logo y descripción -->
@@ -13,10 +15,10 @@
             <div class="col-md-2">
                 <h5 class="fw-bold mb-3">Enlaces</h5>
                 <ul class="list-unstyled text-white-50">
-                    <li><a href="#" class="text-white-50 text-decoration-none">Inicio</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Servicios</a></li>
+                    <li><a href="#inicio" class="text-white-50 text-decoration-none">Inicio</a></li>
+                    <li><a href="#servicios" class="text-white-50 text-decoration-none">Servicios</a></li>
                     <li><a href="#" class="text-white-50 text-decoration-none">Nosotros</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Contacto</a></li>
+                    <li><a href="#contacto" class="text-white-50 text-decoration-none">Contacto</a></li>
                 </ul>
             </div>
 
@@ -24,9 +26,8 @@
             <div class="col-md-3">
                 <h5 class="fw-bold mb-3">Horario</h5>
                 <ul class="list-unstyled text-white-50">
-                    <li>Lunes - Viernes: 9:00 AM - 10:00 PM</li>
-                    <li>Sábado: 9:00 AM - 8:00 PM</li>
-                    <li>Domingo: Cerrado</li>
+                    <li>Lunes a &nbsp;&nbsp;&nbsp 9:00 AM - 1:00 PM<br />Sabado: &nbsp;&nbsp;&nbsp 2:00 PM - 7:00 PM</li>
+                    <li>Domingo: &nbsp 9:30 AM - 3:00 PM</li>
                 </ul>
             </div>
 
@@ -34,11 +35,11 @@
             <div class="col-md-3">
                 <h5 class="fw-bold mb-3">Contáctanos</h5>
                 <ul class="list-unstyled text-white-50">
-                    <li><i class="bi bi-telephone me-2"></i>+505 8888 5555</li>
+                    <li><i class="bi bi-telephone me-2"></i>+505 7746 7334</li>
                     <li><i class="bi bi-envelope me-2"></i>info@blessbarber.com</li>
                     <li><i class="bi bi-geo-alt me-2"></i>Barrio La Fuente, mini agencia Halcón Negro 1/2 cuadra abajo, 46, Managua, Nicaragua</li>
                 </ul>
-                <button class="btn btn-outline-light btn-sm mt-3 px-3 py-2">Reservar Cita</button>
+                <button class="btn btn-outline-light btn-sm mt-3 px-3 py-2" @onclick="() => mostrarModal = true">Reservar Cita</button>
             </div>
         </div>
 
@@ -50,3 +51,12 @@
         </div>
     </div>
 </footer>
+<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="CerrarModal" />
+     
+@code{
+    private bool mostrarModal = false;
+    private void CerrarModal()
+    {
+        mostrarModal = false;
+    }
+}
