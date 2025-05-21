@@ -5,7 +5,7 @@
 
 <div class="home-hero row m-0 align-items-end justify-content-between">
     <!-- Contenido de texto -->
-    <div class="hero-text col-12 col-md-6 animate-fadein-left pb-5 ps-md-5">
+    <div class="hero-text col-12 col-md-6 @(animacionActivada ? "animate-fadein-left" : "") pb-5 ps-md-5">
         <img src="/img/bless-logo.png" alt="Logo Bless Barber Shop" class="mb-4 logo-bless" />
 
         <p class="text-white mb-2">Bienvenido a Bless Barber Shop</p>
@@ -20,7 +20,9 @@
             <button class="btn btn-outline-light px-5 py-3 fs-5 w-100 w-md-auto" @onclick="() => mostrarModal = true">
                 Reservar ahora
             </button>
-            <button class="btn btn-outline-secondary px-5 py-3 fs-5 w-100 w-md-auto">Todos los servicios</button>
+            <button class="btn btn-outline-secondary px-5 py-3 fs-5 w-100 w-md-auto" onclick="document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });">
+                Todos los servicios
+            </button>
         </div>
 
     </div>
@@ -35,15 +37,18 @@
 <section class="about-section d-flex align-items-center bg-white px-4">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
         <!-- Galería estilo collage -->
-        <div class="image-collage me-md-5 mb-4 mb-md-0">
-            <div class="d-flex gap-3 mb-3">
-                <img src="/img/barba-barbero.jpg" class="img-fluid collage-img" alt="Corte 1" />
-                <img src="/img/raya-barbero.jpg" class="img-fluid collage-img" alt="Corte 2" />
+        <div class="image-collage">
+            <!-- Fila de dos imágenes pequeñas -->
+            <div class="collage-row">
+                <img src="/img/barba-barbero.jpg" class="collage-img-small" alt="Corte 1" />
+                <img src="/img/raya-barbero.jpg" class="collage-img-small" alt="Corte 2" />
             </div>
-            <div>
-                <img src="/img/cara-barbero.jpg" class="img-fluid collage-img-large" alt="Corte 3" />
-            </div>
+
+            <!-- Imagen grande debajo -->
+            <img src="/img/cara-barbero.jpg" class="collage-img-large" alt="Corte 3" />
         </div>
+
+
 
         <!-- Texto -->
         <div class="text-content text-md-start text-center ms-md-5 ps-md-3">
@@ -58,7 +63,7 @@
     </div>
 </section>
 
-<section class="booking-section d-flex align-items-center text-white">
+<section id="contacto" class="booking-section d-flex align-items-center text-white">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center w-100">
         <!-- Texto principal -->
         <div class="booking-text text-center text-md-start mb-4 mb-md-0">
@@ -67,7 +72,7 @@
             <p class="text-light mb-4">
                 Obtén un 10% de descuento en tu primer corte reservando a través de nuestro sitio web.
             </p>
-            <button class="btn btn-outline-light px-4 py-2 fw-semibold">Reservar ahora</button>
+            <button class="btn btn-outline-light px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">Reservar ahora</button>
         </div>
 
         <!-- Caja de llamada -->
@@ -76,7 +81,7 @@
                 <i class="bi bi-telephone-fill text-dark fs-1"></i> <!-- o puedes usar una imagen o SVG -->
             </div>
             <p class="text-muted fw-semibold mb-1">Llámanos ahora</p>
-            <h4 class="fw-bold text-dark mb-0">+505 8888 5555</h4>
+            <h4 class="fw-bold text-dark mb-0">+505 7746 7334</h4>
         </div>
     </div>
 </section>
@@ -86,20 +91,25 @@
         <!-- Horario + imagen -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6 mb-4 mb-md-0">
-                <img src="/img/horario-barbero.jpg" alt="Barbero trabajando" class="img-fluid rounded shadow" />
+                <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <img src="/img/barberoTrabajando.jpg"
+                         alt="Barbero trabajando"
+                         class="img-fluid rounded shadow w-100"
+                         style="max-width: 700px;" />
+                </div>
             </div>
             <div class="col-md-6 bg-dark text-white p-4 rounded">
                 <h4 class="fw-bold">DÍAS DE ATENCIÓN</h4>
-                <p class="mb-4 text-white-50">Abrimos seis días a la semana para brindarte el mejor servicio.</p>
+                <p class="mb-4 text-white-50">Abrimos siete días a la semana para brindarte el mejor servicio.</p>
                 <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
-                    <span class="fw-semibold">Lunes</span>
-                    <span>9:00 AM - 10:00 PM</span>
+                    <span class="fw-semibold">Lunes a Sabados</span>
+                    <span>9:00 AM - 1:00 PM<br />2:00 PM - 7:00 PM </span>
                 </div>
                 <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
-                    <span class="fw-semibold">Viernes</span>
-                    <span>9:00 AM - 10:00 PM</span>
+                    <span class="fw-semibold">Domingo</span>
+                    <span>9:30 AM - 3:00 PM</span>
                 </div>
-                <button class="btn btn-outline-light px-4 py-2 fw-semibold">Reservar ahora</button>
+                <button class="btn btn-outline-light px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">Reservar ahora</button>
             </div>
         </div>
 
@@ -115,7 +125,7 @@
     </div>
 </section>
 
-<section class="services-section py-5 bg-light text-dark px-4">
+<section id="servicios" class="services-section py-5 bg-light text-dark px-4">
     <div class="container text-center mb-5">
         <p class="text-secondary text-uppercase mb-2">Nuestros Servicios</p>
         <h2 class="fw-bold fs-1">Cortes de Cabello Populares<br />y Servicios de Barbería</h2>
@@ -167,7 +177,7 @@
     <div class="container">
         <div class="row align-items-center g-4">
             <div class="col-md-6">
-                <img src="/img/facial-hair.jpg" class="img-fluid rounded shadow" alt="Recorte Facial" />
+                <img src="/img/cara-barbero.jpg" class="img-fluid rounded shadow" alt="Recorte Facial" />
             </div>
             <div class="col-md-6">
                 <h3 class="fw-bold mb-3">Recorte Facial Profesional en Casa</h3>
@@ -178,13 +188,10 @@
                     <li class="mb-2"><i class="bi bi-check-circle-fill text-dark me-2"></i>Fácil de reservar en línea</li>
                     <li><i class="bi bi-check-circle-fill text-dark me-2"></i>100% satisfacción garantizada</li>
                 </ul>
-                <button class="btn btn-dark px-4 py-2 fw-semibold">Reservar ahora</button>
+                <button class="btn btn-dark px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true" >Reservar ahora</button>
             </div>
         </div>
     </div>
 </section>
-@code {
-    private bool mostrarModal = false;
-}
 
-<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="@(() => mostrarModal = false)" />
+<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="CerrarModal" />

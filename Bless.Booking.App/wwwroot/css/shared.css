@@ -24,3 +24,28 @@
 }
 
 /* ------------ ReviewsComponent ------------ */
+
+.review-card {
+    height: 100%;
+    min-height: 350px;
+    max-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc; /* Bordes más visibles */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+    .review-card p {
+        flex-grow: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
