@@ -52,8 +52,10 @@
 
         <!-- Texto -->
         <div class="text-content text-md-start text-center ms-md-5 ps-md-3">
-            <p class="text-uppercase text-secondary fw-semibold fs-6 mb-2">Sobre nosotros</p>
-            <h2 class="fw-bold text-dark display-4 mb-4">La mejor barbería para hombres</h2>
+                <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-scissors fs-2"></i> SOBRE NOSOTROS
+                </h2>
+                <h2 class="fw-bold text-dark display-4 mb-4">La mejor barbería para hombres</h2>
             <p class="text-muted fs-5 mb-4">
                 Nuestros barberos hacen un trabajo increíble. Recorta tu cabello al estilo que deseas.
                 Reserva una cita con nosotros y luce como nunca antes.
@@ -67,9 +69,11 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center w-100">
         <!-- Texto principal -->
         <div class="booking-text text-center text-md-start mb-4 mb-md-0">
-            <p class="text-uppercase text-white-50 fw-medium mb-2">Reserva ahora</p>
+            <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+                <i class="bi bi-scissors fs-2"></i> RESERVAR AHORA
+            </h2>           
             <h2 class="display-5 fw-bold mb-3">Reserva tu cita<br />en línea</h2>
-            <p class="text-light mb-4">
+            <p class="text-light mb-4 fs-4">
                 Obtén un 10% de descuento en tu primer corte reservando a través de nuestro sitio web.
             </p>
             <button class="btn btn-outline-light px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">Reservar ahora</button>
@@ -89,33 +93,43 @@
 <section class="working-review-section py-5 bg-light text-dark px-4">
     <div class="container">
         <!-- Horario + imagen -->
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6 mb-4 mb-md-0">
-                <div class="col-12 col-md-6 d-flex justify-content-center">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-6 mb-3 mb-md-0 d-flex justify-content-center">
+                <div>
                     <img src="/img/barberoTrabajando.jpg"
                          alt="Barbero trabajando"
-                         class="img-fluid rounded shadow w-100"
-                         style="max-width: 700px;" />
+                         class="rounded shadow"
+                         style="max-width: 400px; width: 100%; height: auto;" />
                 </div>
             </div>
-            <div class="col-md-6 bg-dark text-white p-4 rounded">
-                <h4 class="fw-bold">DÍAS DE ATENCIÓN</h4>
-                <p class="mb-4 text-white-50">Abrimos siete días a la semana para brindarte el mejor servicio.</p>
-                <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
-                    <span class="fw-semibold">Lunes a Sabados</span>
-                    <span>9:00 AM - 1:00 PM<br />2:00 PM - 7:00 PM </span>
+
+            <div class="col-md-6 bg-dark text-white p-3 rounded">
+                <h4 class="fw-bold mb-2">DÍAS DE ATENCIÓN</h4>
+                <p class="mb-3 text-white-50">Abrimos siete días a la semana para brindarte el mejor servicio.</p>
+
+                <div class="d-flex justify-content-between border-bottom pb-1 mb-2">
+                    <span class="fw-semibold">Lunes a Sábados</span>
+                    <span class="text-end">9:00 AM - 1:00 PM<br />2:00 PM - 7:00 PM</span>
                 </div>
-                <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
+
+                <div class="d-flex justify-content-between border-bottom pb-1 mb-3">
                     <span class="fw-semibold">Domingo</span>
                     <span>9:30 AM - 3:00 PM</span>
                 </div>
-                <button class="btn btn-outline-light px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">Reservar ahora</button>
+
+                <button class="btn btn-outline-light px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">
+                    Reservar ahora
+                </button>
             </div>
         </div>
 
+
+
         <!-- Testimonios -->
-        <div class="text-center mb-5">
-            <p class="text-secondary text-uppercase mb-2">Testimonios</p>
+        <div class="text-center">
+            <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+                <i class="bi bi-scissors fs-2"></i> Testimonios
+            </h2>
             <h2 class="fw-bold">Lo que nuestros clientes dicen</h2>
             <p class="text-muted mx-auto" style="max-width: 600px;">
                 Nuestros barberos hacen un trabajo increíble. Reserva tu cita y disfruta de una experiencia personalizada.
@@ -127,8 +141,9 @@
 
 <section id="servicios" class="services-section py-5 bg-light text-dark px-4">
     <div class="container text-center mb-5">
-        <p class="text-secondary text-uppercase mb-2">Nuestros Servicios</p>
-        <h2 class="fw-bold fs-1">Cortes de Cabello Populares<br />y Servicios de Barbería</h2>
+        <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+            <i class="bi bi-scissors fs-2"></i> NUESTROS SERVICIOS
+        </h2>        <h2 class="fw-bold fs-1">Cortes de Cabello Populares<br />y Servicios de Barbería</h2>
     </div>
 
     <!-- Categorías de servicios -->
