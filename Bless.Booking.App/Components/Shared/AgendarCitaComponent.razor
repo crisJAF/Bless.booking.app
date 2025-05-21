@@ -12,7 +12,7 @@
                 </div>
                 <div class="modal-body">
                     <EditForm Model="@cita" OnValidSubmit="EnviarFormulario">
-                        @* <DataAnnotationsValidator /> *@
+                        <DataAnnotationsValidator />
                         <ValidationSummary />
 
                         <div class="mb-3">
@@ -43,7 +43,7 @@
                                 }
 
                             </InputSelect>
-                            @* <ValidationMessage For="@(() => cita.BarberoID)" /> *@
+                            <ValidationMessage For="@(() => cita.BarberoID)" />
                         </div>
 
                         <div class="mb-3">
@@ -55,7 +55,7 @@
                                     <option value="@servicio.ServicioId">@servicio.Nombre</option>
                                 }
                             </InputSelect>
-                            @* <ValidationMessage For="@(() => cita.ServicioId)" /> *@
+                            <ValidationMessage For="@(() => cita.ServicioId)" />
                         </div>
 
                         <div class="mb-3">
@@ -79,7 +79,6 @@
                                     <option value="@hora.HoraDesde.ToString(@"hh\:mm")">@hora.HoraDesde.ToString(@"hh\:mm")</option>
                                 }
                             </InputSelect>
-                            <ValidationMessage For="@(() => cita.Hora)" />
                         </div>
                         <div class="mb-3">
                             <div id="recaptcha-container"></div>
@@ -87,10 +86,20 @@
 
                         <button type="submit" class="btn btn-dark px-4 py-2 fw-semibold" disabled="@(!captchaValidado)">Reservar Cita</button>
 
-                        @if (exito)
+                        @if (mostrarModalExito)
                         {
-                            <div class="alert alert-success mt-4">
-                                ¡Tu cita ha sido agendada exitosamente!
+                            <div class="modal-backdrop fade show"></div>
+                            <div class="modal d-block" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content bg-white text-dark p-4 rounded shadow">
+                                        <div class="modal-header border-0">
+                                            <h5 class="modal-title fw-bold">¡Reserva exitosa!</h5>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <p class="mb-0">Tu cita ha sido registrada con éxito. ¡Te esperamos!</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         }
                     </EditForm>
