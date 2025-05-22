@@ -29,6 +29,7 @@ namespace Bless.Booking.App.Components.Shared
         private string horaStr;
         private List<TimeSpan> HorasDisponibles = new();
         private bool captchaValidado = false;
+        private bool mostrarModalExito = false;
 
 
         protected override async Task OnInitializedAsync()
@@ -56,15 +57,41 @@ namespace Bless.Booking.App.Components.Shared
 
         private async Task EnviarFormulario()
         {
-            cita.Hora = TimeSpan.Parse(horaStr);
-            exito = await ReservaProxy.RegistrarReserva(cita);
-            if (exito)
+            try
             {
-                cita = new();
-                horaStr = null;
-                await OnClose.InvokeAsync();
+                if (string.IsNullOrWhiteSpace(horaStr))
+                {
+                    exito = false;
+                    return;
+                }
+
+                if (!TimeSpan.TryParse(horaStr, out var hora))
+                {
+                    exito = false;
+                    return;
+                }
+
+                cita.Hora = hora;
+
+                exito = await ReservaProxy.RegistrarReserva(cita);
+                if (exito)
+                {
+                    cita = new();
+                    horaStr = null;
+                    mostrarModalExito = true;
+
+                    // Espera que se muestre el modal, luego se cierra
+                    _ = CerrarModalExitoAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.Error.WriteLine($"Error al enviar el formulario: {ex.Message}");
             }
         }
+
+
 
         private async Task Cerrar()
         {
@@ -95,6 +122,18 @@ namespace Bless.Booking.App.Components.Shared
             {
                 await JS.InvokeVoidAsync("initRecaptchaCallback", DotNetObjectReference.Create(this));
             }
+        }
+        private async Task CerrarModalExitoAsync()
+        {
+            await Task.Yield(); // Permite renderizar primero
+            StateHasChanged();
+
+            await Task.Delay(3000); // Espera 3 segundos
+
+            mostrarModalExito = false;
+            StateHasChanged();
+
+            await OnClose.InvokeAsync(); // Cierra el modal de la cita después del mensaje
         }
     }
 }
