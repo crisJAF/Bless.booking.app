@@ -1,6 +1,8 @@
 ﻿using Bless.Models;
 using Bless.Proxy;
+using Bless.Proxy.Hubs;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.JSInterop;
 
 namespace Bless.Booking.App.Components.Shared
@@ -13,9 +15,10 @@ namespace Bless.Booking.App.Components.Shared
         [Inject] private BarberosProxy BarberosProxy { get; set; }
         [Inject] private ServiciosProxy ServiciosProxy { get; set; }
         [Inject] private ReservaProxy ReservaProxy { get; set; }
-        
-        [Inject]
-        private IJSRuntime JS { get; set; } = default!;
+
+        [Inject] private IJSRuntime JS { get; set; } = default!;
+        [Inject] private IHubContext<NotificationHub> HubContext { get; set; } = default!;
+
 
         private List<Barbero> listBarberos = new();
         private List<Servicio> listServicios = new();
@@ -74,13 +77,17 @@ namespace Bless.Booking.App.Components.Shared
                 cita.Hora = hora;
 
                 exito = await ReservaProxy.RegistrarReserva(cita);
+
                 if (exito)
                 {
+                    // 🔔 Enviar notificación por SignalR
+                    var mensaje = $"Nueva reserva de {cita.Nombre}, hora: {cita.Hora}";
+                    await HubContext.Clients.All.SendAsync("RecibirNotificacion", mensaje);
+
                     cita = new();
                     horaStr = null;
                     mostrarModalExito = true;
 
-                    // Espera que se muestre el modal, luego se cierra
                     _ = CerrarModalExitoAsync();
                 }
             }
@@ -90,9 +97,6 @@ namespace Bless.Booking.App.Components.Shared
                 Console.Error.WriteLine($"Error al enviar el formulario: {ex.Message}");
             }
         }
-
-
-
         private async Task Cerrar()
         {
             exito = false;

@@ -1,5 +1,6 @@
 using Bless.Booking.App.Components;
 using Bless.Proxy;
+using Bless.Proxy.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,7 @@ builder.Services.AddServerSideBlazor().AddCircuitOptions(options =>
     options.DetailedErrors = true;
 });
 
-
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,4 +38,5 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
+app.MapHub<NotificationHub>("/notificacionhub");
 app.Run();
