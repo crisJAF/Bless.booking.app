@@ -1,9 +1,14 @@
-﻿namespace Bless.Booking.App.Components.Pages
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+
+namespace Bless.Booking.App.Components.Pages
 {
     public partial class Home
     {
         private bool animacionActivada = false;
         private bool mostrarModal = false;
+        [Inject] private IJSRuntime JS { get; set; } = default!;
+
         private void CerrarModal()
         {
             mostrarModal = false;
@@ -82,5 +87,18 @@
         }
 
         private ServicioDetalle ServicioActual => detalleServicios[servicioSeleccionado];
+
+        private async Task ScrollAServicios()
+        {
+            await JS.InvokeVoidAsync("eval", "document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })");
+
+        }
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                await JS.InvokeVoidAsync("blessNotificaciones.iniciarConexion");
+            }
+        }
     }
 }
