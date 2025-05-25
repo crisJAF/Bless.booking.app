@@ -1,84 +1,18 @@
-﻿@page "/test/reservas"
-@rendermode InteractiveServer
-@inject HttpClient Http
+﻿
 
-<h3 class="fw-bold text-center mb-4">Reservas Recientes</h3>
+@* 
+<h1>Test Button Component</h1>
 
-@if (reservas == null)
-{
-    <p class="text-center text-muted">Cargando reservas...</p>
-}
-else if (reservas.Count == 0)
-{
-    <p class="text-center text-muted">No hay reservas registradas.</p>
-}
-else
-{
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover text-center bg-white text-black shadow-sm">
-            <thead class="table-dark">
-                <tr>
-                    <th>Cliente</th>
-                    <th>Correo</th>
-                    <th>Servicio</th>
-                    <th>Barbero</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var r in reservas)
-                {
-                    <tr>
-                        <td>@r.NombreCliente</td>
-                        <td>@r.Correo</td>
-                        <td>@r.Servicio</td>
-                        <td>@r.Barbero</td>
-                        <td>@r.Fecha.ToString("dd/MM/yyyy")</td>
-                        <td>@r.Hora.ToString(@"hh\:mm")</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-}
+<button type="button" @onclick="OnClick">Haz clic</button>
+
+<p>@message</p>
 
 @code {
-    private List<ReservaDto>? reservas;
+    private string message = "No clic";
 
-    protected override async Task OnInitializedAsync()
+    private void OnClick()
     {
-        // reservas = await Http.GetFromJsonAsync<List<ReservaDto>>("http://localhost:5210/api/reservas");
-    }
-
-    public class ReservaDto
-    {
-        public string NombreCliente { get; set; } = string.Empty;
-        public string Correo { get; set; } = string.Empty;
-        public string Servicio { get; set; } = string.Empty;
-        public string Barbero { get; set; } = string.Empty;
-        public DateTime Fecha { get; set; }
-        public TimeSpan Hora { get; set; }
+        message = "¡Clic detectado!";
     }
 }
-
-<style>
-    table {
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    th, td {
-        vertical-align: middle;
-    }
-
-    thead {
-        background-color: #000;
-        color: white;
-    }
-
-    .table {
-        border-radius: 12px;
-    }
-
-</style>
+ *@
