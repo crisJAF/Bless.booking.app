@@ -11,6 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Bless.Extension\Bless.Extension.csproj" />
     <ProjectReference Include="..\Bless.Models\Bless.Models.csproj" />
     <ProjectReference Include="..\Bless.Proxy\Bless.Proxy.csproj" />
