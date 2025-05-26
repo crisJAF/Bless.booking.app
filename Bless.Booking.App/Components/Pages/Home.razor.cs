@@ -23,13 +23,13 @@ namespace Bless.Booking.App.Components.Pages
         }
         private string servicioSeleccionado = "Corte Basico";
 
-        private class ServicioVisual
+        public class ServicioVisual
         {
             public string Nombre { get; set; }
             public string Icono { get; set; }
         }
 
-        private class ServicioDetalle
+        public class ServicioDetalle
         {
             public string Titulo { get; set; }
             public string Imagen { get; set; }
@@ -87,13 +87,5 @@ namespace Bless.Booking.App.Components.Pages
         }
 
         private ServicioDetalle ServicioActual => detalleServicios[servicioSeleccionado];
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                await JS.InvokeVoidAsync("blessNotificaciones.iniciarConexion");
-            }
-        }
     }
 }
