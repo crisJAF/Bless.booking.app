@@ -88,11 +88,6 @@ namespace Bless.Booking.App.Components.Pages
 
         private ServicioDetalle ServicioActual => detalleServicios[servicioSeleccionado];
 
-        private async Task ScrollAServicios()
-        {
-            await JS.InvokeVoidAsync("eval", "document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })");
-
-        }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
