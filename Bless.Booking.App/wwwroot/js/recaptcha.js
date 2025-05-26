@@ -1,10 +1,17 @@
-﻿function initRecaptchaCallback(dotNetHelper) {
+﻿let recaptchaHelper = null;
+
+function initRecaptchaCallback(dotNetHelper) {
+    recaptchaHelper = dotNetHelper;
+
     window.onRecaptchaSuccess = function () {
-        dotNetHelper.invokeMethodAsync("RecaptchaValidado");
+        if (recaptchaHelper) {
+            recaptchaHelper.invokeMethodAsync("RecaptchaValidado")
+                .catch(err => console.error("❌ Error en invokeMethodAsync:", err));
+        }
     };
 }
-function initRecaptchaCallback(dotNetHelper) {
-    window.onRecaptchaSuccess = function () {
-        dotNetHelper.invokeMethodAsync("RecaptchaValidado");
-    };
+
+function disposeRecaptchaCallback() {
+    recaptchaHelper = null;
+    window.onRecaptchaSuccess = () => { };
 }

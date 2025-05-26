@@ -34,6 +34,7 @@ namespace Bless.Booking.App.Components.Shared
         private bool captchaValidado = false;
         private bool mostrarModalExito = false;
 
+        private DotNetObjectReference<AgendarCitaComponent>? dotNetRef;
 
         protected override async Task OnInitializedAsync()
         {
@@ -124,8 +125,13 @@ namespace Bless.Booking.App.Components.Shared
         {
             if (firstRender)
             {
-                await JS.InvokeVoidAsync("initRecaptchaCallback", DotNetObjectReference.Create(this));
+                dotNetRef = DotNetObjectReference.Create(this);
+                await JS.InvokeVoidAsync("initRecaptchaCallback", dotNetRef);
             }
+        }
+        public async ValueTask DisposeAsync()
+        {
+            dotNetRef?.Dispose();
         }
         private async Task CerrarModalExitoAsync()
         {

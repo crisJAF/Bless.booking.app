@@ -187,4 +187,7 @@
     </div>
 </section>
 
-<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="CerrarModal" />
+@if (mostrarModal)
+{
+    <AgendarCitaComponent Visible="true" OnClose="CerrarModal" />
+}

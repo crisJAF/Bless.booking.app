@@ -7,8 +7,6 @@ namespace Bless.Booking.App.Components.Pages
     {
         private bool animacionActivada = false;
         private bool mostrarModal = false;
-        [Inject] private IJSRuntime JS { get; set; } = default!;
-
         private void CerrarModal()
         {
             mostrarModal = false;
