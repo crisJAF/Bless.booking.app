@@ -43,7 +43,6 @@
             </div>
         </div>
 
-        <!-- Línea inferior -->
         <hr class="border-top border-secondary mt-5" />
         <div class="d-flex justify-content-between flex-column flex-md-row text-white-50">
             <p class="mb-0">&copy; 2025 Bless Barber Shop. Todos los derechos reservados.</p>
@@ -51,10 +50,15 @@
         </div>
     </div>
 </footer>
-<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="CerrarModal" />
-     
-@code{
+
+<!-- Aquí va el modal correctamente renderizado sin parámetros -->
+<div class="@(mostrarModal ? "" : "d-none")">
+    <AgendarCitaComponent />
+</div>
+
+@code {
     private bool mostrarModal = false;
+
     private void CerrarModal()
     {
         mostrarModal = false;

@@ -1,74 +1,52 @@
 ﻿using Bless.Models;
 using Bless.Proxy;
-using Bless.Proxy.Hubs;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.JSInterop;
 
 namespace Bless.Booking.App.Components.Shared
 {
     public partial class AgendarCitaComponent
     {
-        [Parameter] public bool Visible { get; set; }
-        [Parameter] public EventCallback OnClose { get; set; }
-
-        [Inject] private BarberosProxy BarberosProxy { get; set; }
-        [Inject] private ServiciosProxy ServiciosProxy { get; set; }
-        [Inject] private ReservaProxy ReservaProxy { get; set; }
-
-        [Inject] private IJSRuntime JS { get; set; } = default!;
-        [Inject] private IHubContext<NotificationHub> HubContext { get; set; } = default!;
-
+        [Inject] private BarberosProxy BarberosProxy { get; set; } = default!;
+        [Inject] private ServiciosProxy ServiciosProxy { get; set; } = default!;
+        [Inject] private ReservaProxy ReservaProxy { get; set; } = default!;
 
         private List<Barbero> listBarberos = new();
         private List<Servicio> listServicios = new();
         private List<HorarioDisponible> listHorarioDisponible = new();
-        private Cita cita = new()
-        {
-            Fecha = DateTime.Today
-        };
 
-        private bool exito = false;
+        private Cita cita = new() { Fecha = DateTime.Today };
         private string horaStr;
-        private List<TimeSpan> HorasDisponibles = new();
-        private bool captchaValidado = false;
+        private bool exito = false;
         private bool mostrarModalExito = false;
-
+        [Parameter] public EventCallback OnClose { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            var horarios = await ReservaProxy.ObtenerHorariosAsync("1", "2025-05-19");
             listBarberos = await BarberosProxy.ObtenerBarberosAsync();
             listServicios = await ServiciosProxy.ObtenerServiciosAsync();
-        }
-        protected override async Task OnParametersSetAsync()
-        {
-            if (Visible)
-            {
-                await RenderizarRecaptcha();
-            }
-        }
 
+            // Ejemplo: carga horarios iniciales opcionales
+            var horarios = await ReservaProxy.ObtenerHorariosAsync("1", cita.Fecha.ToString("yyyy-MM-dd"));
+        }
 
         private async Task OnFechaChanged(DateTime nuevaFecha)
         {
             cita.Fecha = nuevaFecha;
-            int barberoId = cita.BarberoID;
 
-            listHorarioDisponible = await ReservaProxy.ObtenerHorariosAsync(barberoId.ToString(), nuevaFecha.ToString("yyyy-MM-dd"));
+            if (cita.BarberoID != 0)
+            {
+                listHorarioDisponible = await ReservaProxy.ObtenerHorariosAsync(
+                    cita.BarberoID.ToString(),
+                    nuevaFecha.ToString("yyyy-MM-dd")
+                );
+            }
         }
 
         private async Task EnviarFormulario()
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(horaStr))
-                {
-                    exito = false;
-                    return;
-                }
-
-                if (!TimeSpan.TryParse(horaStr, out var hora))
+                if (string.IsNullOrWhiteSpace(horaStr) || !TimeSpan.TryParse(horaStr, out var hora))
                 {
                     exito = false;
                     return;
@@ -80,11 +58,7 @@ namespace Bless.Booking.App.Components.Shared
 
                 if (exito)
                 {
-                    // 🔔 Enviar notificación por SignalR
-                    var mensaje = $"Nueva reserva de {cita.Nombre}, hora: {cita.Hora}";
-                    await HubContext.Clients.All.SendAsync("RecibirNotificacion", mensaje);
-
-                    cita = new();
+                    cita = new() { Fecha = DateTime.Today };
                     horaStr = null;
                     mostrarModalExito = true;
 
@@ -97,47 +71,28 @@ namespace Bless.Booking.App.Components.Shared
                 Console.Error.WriteLine($"Error al enviar el formulario: {ex.Message}");
             }
         }
-        private async Task Cerrar()
+
+        private void Cerrar()
         {
             exito = false;
-            cita = new();
+            cita = new() { Fecha = DateTime.Today };
             horaStr = null;
-            await OnClose.InvokeAsync();
-        }
-        private async Task RenderizarRecaptcha()
-        {
-            await JS.InvokeVoidAsync("grecaptcha.render", "recaptcha-container", new
-            {
-                sitekey = "6Legsj0rAAAAAK3IxTu5GwSgfD2gjQ5rlxeEoSCF",
-                callback = "onRecaptchaSuccess"
-            });
-        }
 
-        [JSInvokable]
-        public void RecaptchaValidado()
-        {
-            captchaValidado = true;
-            StateHasChanged();
-        }
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
+            if (OnClose.HasDelegate)
             {
-                await JS.InvokeVoidAsync("initRecaptchaCallback", DotNetObjectReference.Create(this));
+                OnClose.InvokeAsync();
             }
         }
+
         private async Task CerrarModalExitoAsync()
         {
-            await Task.Yield(); // Permite renderizar primero
+            await Task.Yield(); // Permite renderizar el modal de éxito
             StateHasChanged();
 
             await Task.Delay(3000); // Espera 3 segundos
 
             mostrarModalExito = false;
             StateHasChanged();
-
-            await OnClose.InvokeAsync(); // Cierra el modal de la cita después del mensaje
         }
     }
 }

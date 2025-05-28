@@ -7,8 +7,9 @@
 
         <!-- Botón hamburguesa -->
         <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-            <i class="bi bi-list fs-1"></i> <!-- Necesitas Bootstrap Icons -->
+            <i class="bi bi-list fs-1"></i>
         </button>
+
         <!-- Menú colapsable -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
             <ul class="navbar-nav gap-3">
@@ -26,17 +27,22 @@
                 </li>
             </ul>
             <div class="ms-md-4 mt-3 mt-md-0">
-                <button class="btn btn-outline-light fw-semibold px-4 py-2"  @onclick="() => mostrarModal = true">Reservar</button>
+                <button class="btn btn-outline-light fw-semibold px-4 py-2" @onclick="() => mostrarModal = true">Reservar</button>
             </div>
         </div>
     </div>
 </nav>
 
-<AgendarCitaComponent @key="mostrarModal" Visible="@mostrarModal" OnClose="CerrarModal" />
-@code{
-        private bool mostrarModal = false;
-        private void CerrarModal()
-        {
-            mostrarModal = false;
-        }
+<!-- Modal sin parámetros inválidos -->
+<div class="@(mostrarModal ? "" : "d-none")">
+    <AgendarCitaComponent />
+</div>
+
+@code {
+    private bool mostrarModal = false;
+
+    private void CerrarModal()
+    {
+        mostrarModal = false;
+    }
 }

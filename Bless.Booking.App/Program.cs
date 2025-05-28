@@ -38,7 +38,14 @@ builder.Services.AddServerSideBlazor().AddCircuitOptions(options =>
     options.DetailedErrors = true;
 });
 
-builder.Services.AddSignalR();
+builder.Services.AddServerSideBlazor()
+    .AddCircuitOptions(options =>
+    {
+        options.DetailedErrors = true;
+        options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromMinutes(1);
+        options.JSInteropDefaultCallTimeout = TimeSpan.FromSeconds(30);
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

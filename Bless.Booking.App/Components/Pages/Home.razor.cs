@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
 
 namespace Bless.Booking.App.Components.Pages
 {
@@ -7,12 +6,12 @@ namespace Bless.Booking.App.Components.Pages
     {
         private bool animacionActivada = false;
         private bool mostrarModal = false;
-        [Inject] private IJSRuntime JS { get; set; } = default!;
 
         private void CerrarModal()
         {
             mostrarModal = false;
         }
+
         protected override void OnAfterRender(bool firstRender)
         {
             if (firstRender)
@@ -21,6 +20,7 @@ namespace Bless.Booking.App.Components.Pages
                 StateHasChanged(); // fuerza un re-render para aplicar la clase
             }
         }
+
         private string servicioSeleccionado = "Corte Basico";
 
         private class ServicioVisual
@@ -36,7 +36,6 @@ namespace Bless.Booking.App.Components.Pages
             public string Descripcion { get; set; }
         }
 
-        // Tarjetas que se ven como botones
         private Dictionary<string, ServicioVisual> serviciosVisuales = new()
         {
             ["Corte Basico"] = new ServicioVisual { Nombre = "Corte Basico", Icono = "/img/corte-basico.png" },
@@ -46,7 +45,6 @@ namespace Bless.Booking.App.Components.Pages
             ["Skin Care"] = new ServicioVisual { Nombre = "Skin Care", Icono = "/img/skin-care.png" },
         };
 
-        // Información que se muestra debajo
         private Dictionary<string, ServicioDetalle> detalleServicios = new()
         {
             ["Corte Basico"] = new ServicioDetalle
@@ -87,13 +85,5 @@ namespace Bless.Booking.App.Components.Pages
         }
 
         private ServicioDetalle ServicioActual => detalleServicios[servicioSeleccionado];
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                await JS.InvokeVoidAsync("blessNotificaciones.iniciarConexion");
-            }
-        }
     }
 }
