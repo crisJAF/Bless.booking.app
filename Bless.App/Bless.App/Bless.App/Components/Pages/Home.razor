@@ -1,7 +1,188 @@
 ﻿@page "/"
+@rendermode InteractiveServer
+@using Bless.App.Components
 
-<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<div id="inicio" class="home-hero row m-0 align-items-end justify-content-between">
+    <!-- Contenido de texto -->
+    <div class="hero-text col-12 col-md-6 @(animacionActivada ? "animate-fadein-left" : "") pb-5 ps-md-5">
+        <img src="/img/bless-logo.png" alt="Logo Bless Barber Shop" class="mb-4 logo-bless" />
 
-Welcome to your new app.
+        <p class="text-white mb-2">Bienvenido a Bless Barber Shop</p>
+        <h1 class="display-5 fw-bold mb-4 text-white">
+            La mejor barbería para un<br />look profesional
+        </h1>
+        <p class="text-muted mb-4" style="max-width: 450px;">
+            Bless ofrece tratamientos personalizados de alto rendimiento para brindarte resultados visibles.
+        </p>
+
+        <div class="d-flex flex-column flex-md-row gap-3">
+            <button class="btn btn-outline-light px-5 py-3 fs-5 w-100 w-md-auto" @onclick="() => mostrarModal = true">
+                Reservar ahora
+            </button>
+            <a href="#servicios"
+               class="btn btn-outline-secondary px-5 py-3 fs-5 w-100 w-md-auto">
+                Todos los servicios
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Contenido de imagen -->
+    <div class="hero-image col-md-6 d-none d-md-block" style="padding-right: 0; margin-right: 0;">
+        <img src="/img/fondo-barbero.png" alt="Cliente recibiendo corte"
+             class="img-fluid barber-img" style="display: block; margin-left: auto;" />
+    </div>
+</div>
+
+<section class="about-section d-flex align-items-center bg-white px-4">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
+        <!-- Galería estilo collage -->
+        <div class="image-collage">
+            <!-- Fila de dos imágenes pequeñas -->
+            <div class="collage-row">
+                <img src="/img/barba-barbero.jpg" class="collage-img-small" alt="Corte 1" />
+                <img src="/img/raya-barbero.jpg" class="collage-img-small" alt="Corte 2" />
+            </div>
+
+            <!-- Imagen grande debajo -->
+            <img src="/img/cara-barbero.jpg" class="collage-img-large" alt="Corte 3" />
+        </div>
+
+
+
+        <!-- Texto -->
+        <div class="text-content text-md-start text-center ms-md-5 ps-md-3">
+                <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-scissors fs-2"></i> SOBRE NOSOTROS
+                </h2>
+                <h2 class="fw-bold text-dark display-4 mb-4">La mejor barbería para hombres</h2>
+            <p class="text-muted fs-5 mb-4">
+                Nuestros barberos hacen un trabajo increíble. Recorta tu cabello al estilo que deseas.
+                Reserva una cita con nosotros y luce como nunca antes.
+            </p>
+            <button class="btn btn-dark text-white px-5 py-3 fw-semibold leer-mas-btn">Leer más</button>
+        </div>
+    </div>
+</section>
+
+<section id="contacto" class="booking-section d-flex align-items-center text-white">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center w-100">
+        <!-- Texto principal -->
+        <div class="booking-text text-center text-md-start mb-4 mb-md-0">
+            <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+                <i class="bi bi-scissors fs-2"></i> RESERVAR AHORA
+            </h2>           
+            <h2 class="display-5 fw-bold mb-3">Reserva tu cita<br />en línea</h2>
+            <p class="text-light mb-4 fs-4">
+                Obtén un 10% de descuento en tu primer corte reservando a través de nuestro sitio web.
+            </p>
+            <button class="btn btn-outline-light px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">Reservar ahora</button>
+        </div>
+
+        <!-- Caja de llamada -->
+        <div class="call-box bg-white text-center shadow-sm p-4 rounded">
+            <div class="icon-container mb-3">
+                <i class="bi bi-telephone-fill text-dark fs-1"></i> <!-- o puedes usar una imagen o SVG -->
+            </div>
+            <p class="text-muted fw-semibold mb-1">Llámanos ahora</p>
+            <h4 class="fw-bold text-dark mb-0">+505 7746 7334</h4>
+        </div>
+    </div>
+</section>
+
+<section class="working-review-section py-5 bg-light text-dark px-4">
+    <div class="container">
+        <!-- Horario + imagen -->
+        <div class="row align-items-center mb-4">
+            <div class="col-md-6 mb-3 mb-md-0 d-flex justify-content-center">
+                <div>
+                    <img src="/img/barberoTrabajando.jpg"
+                         alt="Barbero trabajando"
+                         class="rounded shadow"
+                         style="max-width: 400px; width: 100%; height: auto;" />
+                </div>
+            </div>
+
+            <div class="col-md-6 bg-dark text-white p-3 rounded">
+                <h4 class="fw-bold mb-2">DÍAS DE ATENCIÓN</h4>
+                <p class="mb-3 text-white-50">Abrimos siete días a la semana para brindarte el mejor servicio.</p>
+
+                <div class="d-flex justify-content-between border-bottom pb-1 mb-2">
+                    <span class="fw-semibold">Lunes a Sábados</span>
+                    <span class="text-end">9:00 AM - 1:00 PM<br />2:00 PM - 7:00 PM</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom pb-1 mb-3">
+                    <span class="fw-semibold">Domingo</span>
+                    <span>9:30 AM - 3:00 PM</span>
+                </div>
+
+                <button class="btn btn-outline-light px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">
+                    Reservar ahora
+                </button>
+            </div>
+        </div>
+
+
+
+        <!-- Testimonios -->
+        <div class="text-center">
+            <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+                <i class="bi bi-scissors fs-2"></i> Testimonios
+            </h2>
+            <h2 class="fw-bold">Lo que nuestros clientes dicen</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px;">
+                Nuestros barberos hacen un trabajo increíble. Reserva tu cita y disfruta de una experiencia personalizada.
+            </p>
+        </div>
+       @*  <ReviewsComponent></ReviewsComponent> *@
+    </div>
+</section>
+
+<section id="servicios" class="services-section py-5 bg-light text-dark px-4">
+    <div class="container text-center mb-5">
+        <h2 class="text-secondary text-uppercase mb-4 d-inline-flex align-items-center gap-2">
+            <i class="bi bi-scissors fs-2"></i> NUESTROS SERVICIOS
+        </h2>        <h2 class="fw-bold fs-1">Cortes de Cabello Populares<br />y Servicios de Barbería</h2>
+    </div>
+
+    <!-- Categorías de servicios -->
+    <div class="container mb-5">
+        <div class="row justify-content-center text-center g-3">
+            @foreach (var servicio in serviciosVisuales.Values)
+            {
+                bool activo = servicio.Nombre == servicioSeleccionado;
+                <div class="col-6 col-md-2">
+                    <div class="service-box p-3 rounded shadow-sm h-100 cursor-pointer
+                             @(activo ? "bg-dark text-white" : "bg-white text-dark")"
+                         @onclick="@(() => SeleccionarServicio(servicio.Nombre))">
+                        <img src="@servicio.Icono" class="img-fluid mb-2" />
+                        <p class="fw-semibold mb-0">@servicio.Nombre</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <!-- Detalle de servicio destacado -->
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-md-6">
+                <div class="imagen-servicio-wrapper">
+                    <img src="@ServicioActual.Imagen" class="img-fluid imagen-servicio" alt="@ServicioActual.Titulo" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3 class="fw-bold mb-3">@ServicioActual.Titulo</h3>
+                <p class="text-muted">@ServicioActual.Descripcion</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-dark me-2"></i>Fácil de reservar en línea</li>
+                    <li><i class="bi bi-check-circle-fill text-dark me-2"></i>100% satisfacción garantizada</li>
+                </ul>
+                <button class="btn btn-dark px-4 py-2 fw-semibold" @onclick="() => mostrarModal = true">Reservar ahora</button>
+            </div>
+        </div>
+    </div>
+</section>

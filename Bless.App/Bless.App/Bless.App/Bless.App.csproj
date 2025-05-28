@@ -6,4 +6,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bless.Extension\Bless.Extension.csproj" />
+    <ProjectReference Include="..\Bless.Models\Bless.Models.csproj" />
+    <ProjectReference Include="..\Bless.Proxy\Bless.Proxy.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\Admin\Pages\" />
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>
