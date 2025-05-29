@@ -1,4 +1,6 @@
 @import url(css/home.css);
+@import url(css/Layout.css);
+@import url(css/Shared.css);
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
