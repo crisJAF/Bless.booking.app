@@ -1,0 +1,17 @@
+﻿﻿ /* ------------ Header ------------ */
+nav.navbar .nav-link {
+    padding: 0;
+    font-size: 1rem;
+}
+
+nav.navbar .btn {
+    border-radius: 0;
+    font-size: 1rem;
+}
+
+/* ------------ Footer ------------ */
+
+.footer a:hover {
+    color: white !important;
+    text-decoration: underline;
+}

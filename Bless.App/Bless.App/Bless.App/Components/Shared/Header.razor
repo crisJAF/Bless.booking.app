@@ -1,0 +1,41 @@
+﻿@rendermode InteractiveServer
+
+<nav class="navbar fixed-top navbar-expand-md bg-black shadow-sm px-4">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand text-white fw-bold" href="#">Bless Barber Shop</a>
+
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <i class="bi bi-list fs-1"></i> <!-- Necesitas Bootstrap Icons -->
+        </button>
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="#">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+            <div class="ms-md-4 mt-3 mt-md-0">
+                <button class="btn btn-outline-light fw-semibold px-4 py-2"  @onclick="() => mostrarModal = true">Reservar</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+@code{
+        private bool mostrarModal = false;
+        private void CerrarModal()
+        {
+            mostrarModal = false;
+        }
+}
