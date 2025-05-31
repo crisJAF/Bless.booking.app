@@ -7,7 +7,7 @@ namespace Bless.App.Components.Pages
         private bool animacionActivada = false;
         private bool mostrarModal = false;
 
-        private void CerrarModal()
+        private void CerrarModalCita()
         {
             mostrarModal = false;
         }
