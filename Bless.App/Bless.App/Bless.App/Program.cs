@@ -30,7 +30,7 @@ builder.Services.AddScoped<CustomAuthStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 builder.Services.AddAuthorizationCore();
 
-//builder.Services.AddSingleton<BookingHub>();
+builder.Services.AddSingleton<BookingHub>();
 
 builder.Services.AddServerSideBlazor().AddCircuitOptions(options =>
 {
