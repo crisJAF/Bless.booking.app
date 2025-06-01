@@ -1,23 +1,28 @@
-﻿@page "/admin/home"
+﻿@page "/login/admin"
 
 @rendermode InteractiveServer
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
 @attribute [Authorize]
 @inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <div style="margin-top: 10rem; margin-bottom: 10rem;">
     <div class="container mt-5">
         <div class="card shadow p-4 text-center">
-            <AuthorizeView>
-                <Authorized>
-                    <h3 class="text-success mb-3">Bienvenido, estás autenticado</h3>
-                    <button class="btn btn-danger" @onclick="Logout" @onclick:preventDefault>Salir</button>
-                </Authorized>
-                <NotAuthorized>
-                    <p class="text-danger">No estás autorizado. Redirigiendo...</p>
-                </NotAuthorized>
-            </AuthorizeView>
+
+            <CascadingAuthenticationState>
+                <AuthorizeView>
+                    <Authorized>
+                        <h3 class="text-success mb-3">Bienvenido, estás autenticado</h3>
+                        <button class="btn btn-danger" @onclick="Logout" @onclick:preventDefault>Salir</button>
+                    </Authorized>
+                    <NotAuthorized>
+                        <p class="text-danger">No estás autorizado. Redirigiendo...</p>
+                    </NotAuthorized>
+                </AuthorizeView>
+            </CascadingAuthenticationState>
+            
         </div>
     </div>
 
