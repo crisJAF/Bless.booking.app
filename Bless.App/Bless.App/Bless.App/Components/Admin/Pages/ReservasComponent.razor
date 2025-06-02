@@ -1,0 +1,96 @@
+﻿@using Bless.App.Components.Admin.Pages
+
+@if (reservasFiltradas.Any())
+{
+    <div class="reservas-wrapper mt-4">
+        <!-- Encabezado con filtro de fecha -->
+        <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+            <div class="d-flex align-items-center gap-3">
+                <h5 class="text-dark mb-0">
+                    <i class="bi bi-calendar-check-fill me-2 text-primary"></i>Reservas para el
+                </h5>
+                <InputDate @bind-Value="fechaSeleccionada" class="form-control form-control-sm" />
+            </div>
+            <span class="text-muted small">@fechaSeleccionada</span>
+        </div>
+
+        <!-- Tabla para escritorio -->
+        <div class="table-responsive d-none d-md-block">
+            <table class="table table-borderless align-middle mb-0">
+                <thead class="bg-light text-secondary fw-semibold">
+                    <tr>
+                        <th>#</th>
+                        <th>Cliente</th>
+                        <th>Servicio</th>
+                        <th>Barbero</th>
+                        <th>Hora</th>
+                        <th>Estado</th>
+                        <th class="text-end">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var (reserva, index) in reservasFiltradas.Select((r, i) => (r, i + 1)))
+                    {
+                        <tr class="border-bottom">
+                            <td class="text-muted">#@index</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div>@reserva.Cliente</div>
+                                </div>
+                            </td>
+                            <td>@reserva.Servicio</td>
+                            <td>@reserva.Barbero</td>
+                            <td>@reserva.Hora.ToString(@"hh\:mm")</td>
+                            <td>
+                                <span class="badge @ObtenerClaseEstado(reserva.Estado)">
+                                    @reserva.Estado
+                                </span>
+                            </td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-light border rounded-circle">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tarjetas para móvil -->
+        <div class="row g-3 px-2 pt-3 d-md-none">
+            @foreach (var (reserva, index) in reservasFiltradas.Select((r, i) => (r, i + 1)))
+            {
+                <div class="col-12">
+                    <div class="card shadow-sm border-0 p-3 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted small">#@index</span>
+                            <button class="btn btn-sm btn-light border rounded-circle">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                        </div>
+
+                        <div class="d-flex flex-column align-items-center mb-3">
+                            <div class="fw-semibold text-center">@reserva.Cliente</div>
+                        </div>
+
+                        <div class="mb-1 text-muted"><strong>Servicio:</strong> @reserva.Servicio</div>
+                        <div class="mb-1 text-muted"><strong>Barbero:</strong> @reserva.Barbero</div>
+                        <div class="mb-1 text-muted"><strong>Hora:</strong> @reserva.Hora.ToString(@"hh\:mm")</div>
+                        <div class="mt-2">
+                            <span class="badge @ObtenerClaseEstado(reserva.Estado)">
+                                @reserva.Estado
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-secondary mt-4 text-center">
+        <i class="bi bi-info-circle me-2"></i>No hay reservas registradas para @fechaSeleccionada:dd/MM/yyyy.
+    </div>
+}
