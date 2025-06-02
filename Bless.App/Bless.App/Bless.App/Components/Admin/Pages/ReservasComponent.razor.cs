@@ -1,10 +1,18 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Bless.Models;
+using Bless.Proxy;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace Bless.App.Components.Admin.Pages
 {
     public partial class ReservasComponent : ComponentBase
     {
+        [Inject] private ReservaProxy ReservaProxy { get; set; } = default!;
+        [Inject] private BarberosProxy BarberosProxy { get; set; } = default!;
+
         private List<Reserva> todasLasReservas = new();
+        private List<Barbero> barberos = new();
+        private string barberoId = "";
         private DateTime fechaSeleccionada = DateTime.Today;
 
         private List<Reserva> reservasFiltradas => todasLasReservas
@@ -13,29 +21,34 @@ namespace Bless.App.Components.Admin.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            todasLasReservas = await ObtenerTodasLasReservasAsync();
+            await CargarBarberos();
+            await CargarReservas();
         }
 
-        private Task<List<Reserva>> ObtenerTodasLasReservasAsync()
+        private async Task CargarReservas()
         {
-            // Simulación con diferentes fechas
-            return Task.FromResult(new List<Reserva>
+            var fechaStr = fechaSeleccionada.ToString("yyyy-MM-dd");
+            todasLasReservas = await ReservaProxy.ListarReservasAsync(fechaStr, barberoId);
+        }
+
+        private async Task FechaCambiadaHandler(ChangeEventArgs e)
+        {
+            if (DateTime.TryParse(e.Value?.ToString(), out var nuevaFecha))
             {
-                new() { Cliente = "Carlos Pérez", Servicio = "Corte Básico", Barbero = "Luis", Hora = new TimeSpan(9, 30, 0), Estado = "Confirmada", Fecha = DateTime.Today },
-                new() { Cliente = "Ana Torres", Servicio = "Afeitado", Barbero = "Mario", Hora = new TimeSpan(11, 0, 0), Estado = "Pendiente", Fecha = DateTime.Today },
-                new() { Cliente = "Jorge Ruiz", Servicio = "Corte", Barbero = "Luis", Hora = new TimeSpan(10, 0, 0), Estado = "Cancelada", Fecha = DateTime.Today.AddDays(1) },
-                new() { Cliente = "Lucía Gómez", Servicio = "Barba", Barbero = "Mario", Hora = new TimeSpan(12, 0, 0), Estado = "Confirmada", Fecha = DateTime.Today.AddDays(-1) }
-            });
+                fechaSeleccionada = nuevaFecha;
+                await CargarReservas();
+            }
         }
 
-        public class Reserva
+        private async Task BarberoSeleccionadoHandler(ChangeEventArgs e)
         {
-            public string Cliente { get; set; } = string.Empty;
-            public string Servicio { get; set; } = string.Empty;
-            public string Barbero { get; set; } = string.Empty;
-            public TimeSpan Hora { get; set; }
-            public string Estado { get; set; } = "Pendiente";
-            public DateTime Fecha { get; set; } // NUEVO
+            barberoId = e.Value?.ToString() ?? string.Empty;
+            await CargarReservas();
+        }
+
+        private async Task CargarBarberos()
+        {
+            barberos = await BarberosProxy.ObtenerBarberosAsync();
         }
 
         private string ObtenerClaseEstado(string? estado)
