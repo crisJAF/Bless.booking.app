@@ -1,55 +1,69 @@
 ﻿@page "/login/admin"
+
 @rendermode InteractiveServer
+
 @attribute [Authorize]
 
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
 @using Bless.Proxy
 
+@inject HttpClient Http
+@inject IJSRuntime JS
 @inject BookingHub SignalR
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
-    <div class="notificacion-campana position-fixed top-0 end-0 m-4">
-        <i class="bi bi-bell-fill fs-4 text-white position-relative">
-            <span class="badge-notificacion position-absolute top-0 start-100 translate-middle">
-                @mensajes.Count
-            </span>
-        </i>
-    </div>
+
+<div class="notificacion-campana position-fixed top-0 end-0 m-4">
+<i class="bi bi-bell-fill fs-4 text-white position-relative">
+    <span class="badge-notificacion position-absolute top-0 start-100 translate-middle">
+        @mensajes.Count
+    </span>
+</i>
+</div>
 
 <div class="container d-flex justify-content-center align-items-start" style="min-height: 90vh; padding-top: 6rem;">
-    <div class="d-flex justify-content-center w-100">
-        <div class="card border-0 p-4 text-center bg-white w-100" style="max-width: 70rem;">
-            <CascadingAuthenticationState>
-                <AuthorizeView>
-                    <Authorized>
-                        <div class="mb-4">
-                            <h4 class="text-success mb-2">
-                                <i class="bi bi-check-circle-fill me-2"></i>Bienvenido, estás autenticado
-                            </h4>
-                            <p class="text-muted">Desde aquí puedes gestionar tus notificaciones y ver las reservas del día.</p>
-                        </div>
+<div class="d-flex justify-content-center w-100">
+    <div class="card border-0 p-4 text-center bg-white w-100" style="max-width: 70rem;">
+        <CascadingAuthenticationState>
+            <AuthorizeView>
+                <Authorized>
 
-                        <div class="mb-4">
-                            <ReservasComponent />
-                        </div>
-
-                        <div class="text-center mt-3">
-                            <button class="btn btn-danger btn-sm px-3 py-2 rounded-pill w-auto" style="font-size: 1rem;" @onclick="Logout" @onclick:preventDefault>
-                                <i class="bi bi-box-arrow-right me-1"></i> Salir
+                        @if (mostrarBoton)
+                        {
+                            <button @onclick="SolicitarPermiso" class="boton-notificacion mx-auto d-block" style="width: 25rem;">
+                                Activar Notificaciones
                             </button>
-                        </div>
-                    </Authorized>
-                    <NotAuthorized>
-                        <p class="text-danger">
-                            <i class="bi bi-exclamation-triangle-fill me-2"></i>No estás autorizado. Redirigiendo...
-                        </p>
-                    </NotAuthorized>
-                </AuthorizeView>
-            </CascadingAuthenticationState>
-        </div>
+                        }
+
+
+                    <div class="mb-4">
+                        <h4 class="text-success mb-2">
+                            <i class="bi bi-check-circle-fill me-2"></i>Bienvenido, estás autenticado
+                        </h4>
+                        <p class="text-muted">Desde aquí puedes gestionar tus notificaciones y ver las reservas del día.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <ReservasComponent />
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <button class="btn btn-danger btn-sm px-3 py-2 rounded-pill w-auto" style="font-size: 1rem;" @onclick="Logout" @onclick:preventDefault>
+                            <i class="bi bi-box-arrow-right me-1"></i> Salir
+                        </button>
+                    </div>
+                </Authorized>
+                <NotAuthorized>
+                    <p class="text-danger">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>No estás autorizado. Redirigiendo...
+                    </p>
+                </NotAuthorized>
+            </AuthorizeView>
+        </CascadingAuthenticationState>
     </div>
+</div>
 </div>
 
 
@@ -57,6 +71,8 @@
 
     private List<string> mensajes = new();
     private int contador = 1;
+    private bool mostrarBoton = true;
+
 
     private async Task Logout()
     {
@@ -66,12 +82,25 @@
     protected override async Task OnInitializedAsync()
     {
         SignalR.OnNotificacionRecibida += async (msg) =>
-         {
-             var mensajeConNumero = $"{msg} {contador++}";
-             mensajes.Add(mensajeConNumero);
-             await InvokeAsync(StateHasChanged);
-         };
+            {
+                var mensajeConNumero = $"{msg} {contador++}";
+                mensajes.Add(mensajeConNumero);
+                await EnviarNotificacion();
+                await InvokeAsync(StateHasChanged);
+            };
 
         await SignalR.ConectarAsync();
+    }
+
+    private async Task SolicitarPermiso()
+    {
+        await JS.InvokeVoidAsync("notifications.requestPermissionAndSubscribe");
+        mostrarBoton = false; // Ocultar botón
+    }
+
+    private async Task EnviarNotificacion()
+    {
+        // Llama al backend para enviar la notificación a todos los dispositivos suscritos
+        await Http.PostAsync("https://localhost:7289/api/push/send", null);
     }
 }

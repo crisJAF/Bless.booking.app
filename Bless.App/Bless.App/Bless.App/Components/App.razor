@@ -16,7 +16,24 @@
 
 <body>
     <Routes />
+    
+    <!-- Tu script de notificaciones personalizado -->
+    <script src="js/push-notification.js"></script>
+
+    <!-- Blazor script principal -->
     <script src="_framework/blazor.web.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function (registration) {
+                    console.log('Service Worker registrado con éxito:', registration);
+                }).catch(function (error) {
+                    console.error('Error al registrar el Service Worker:', error);
+                });
+        }
+    </script>
 </body>
+
 
 </html>
