@@ -1,0 +1,37 @@
+﻿@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem;
+        border: none;
+    }
+
+        .table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            color: #6c757d;
+        }
+}
+
+.avatar {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.reservas-wrapper .card {
+    transition: box-shadow 0.2s ease;
+}
+
+    .reservas-wrapper .card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }

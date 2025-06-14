@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bless.App", "Bless.App\Bless.App.csproj", "{305AB5B5-DAA7-4AAA-BA70-0301118101DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bless.App", "Bless.App\Bless.App.csproj", "{305AB5B5-DAA7-4AAA-BA70-0301118101DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bless.Models", "Bless.Models\Bless.Models.csproj", "{AE53CBB9-A86E-437E-B334-20522FCD4C10}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bless.Models", "Bless.Models\Bless.Models.csproj", "{AE53CBB9-A86E-437E-B334-20522FCD4C10}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bless.Proxy", "Bless.Proxy\Bless.Proxy.csproj", "{B8975B0E-9101-42C0-8ADA-B0EEAAE3C18F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bless.Proxy", "Bless.Proxy\Bless.Proxy.csproj", "{B8975B0E-9101-42C0-8ADA-B0EEAAE3C18F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bless.Extension", "Bless.Extension\Bless.Extension.csproj", "{1205D916-14D1-4D8F-8C99-220C4158B313}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bless.Extension", "Bless.Extension\Bless.Extension.csproj", "{1205D916-14D1-4D8F-8C99-220C4158B313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

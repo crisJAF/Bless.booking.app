@@ -82,5 +82,45 @@ namespace Bless.Proxy
                 return false;
             }
         }
+
+        public async Task<List<Reserva>> ListarReservasAsync(string fecha, string? barberoId)
+        {
+            var baseUrl = _serviceConfiguration.BaseUri;
+            var endpoint = _serviceConfiguration.Endpoints
+                .FirstOrDefault(x => x.Name == "ListarReservas")?.Url;
+            try
+            {
+  
+
+                if (string.IsNullOrEmpty(endpoint))
+                    throw new Exception("Endpoint ListarReservas no configurado.");
+
+                // Construir URL condicionalmente
+                string url = $"{baseUrl}{endpoint}?fecha={fecha}";
+                if (!string.IsNullOrWhiteSpace(barberoId))
+                {
+                    url += $"&barberoId={barberoId}";
+                }
+
+                var response = await new HttpRequest()
+                    .WithMethod(HttpMethod.Get)
+                    .WithRequestUri(url)
+                    .WithHeader("Accept", "application/json")
+                    .SendAsync();
+
+                if (string.IsNullOrWhiteSpace(response))
+                    throw new Exception("La respuesta del servidor está vacía o nula.");
+
+                var result = JsonConvert.DeserializeObject<ApiResponse<List<Reserva>>>(response);
+
+                return result?.Content ?? new List<Reserva>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener las reservas: {ex.Message}");
+                return new List<Reserva>();
+            }
+        }
+
     }
 }
