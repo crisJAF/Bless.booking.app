@@ -14,51 +14,65 @@
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
-<div class="container" style="margin-top: 5rem;">
 
-    <button @onclick="SolicitarPermiso">Activar Notificaciones</button>
+<div class="notificacion-campana position-fixed top-0 end-0 m-4">
+<i class="bi bi-bell-fill fs-4 text-white position-relative">
+    <span class="badge-notificacion position-absolute top-0 start-100 translate-middle">
+        @mensajes.Count
+    </span>
+</i>
+</div>
 
-    <div class="text-center mb-5">
-        <h2 class="text-primary">
-            <i class="bi bi-bell-fill me-2"></i> Notificaciones
-        </h2>
-        <ul class="list-group list-group-flush mt-3">
-            @foreach (var msg in mensajes)
-            {
-                <li class="list-group-item bg-light border rounded shadow-sm mb-2">
-                    <i class="bi bi-chat-left-text me-2 text-secondary"></i>@msg
-                </li>
-            }
-        </ul>
-    </div>
+<div class="container d-flex justify-content-center align-items-start" style="min-height: 90vh; padding-top: 6rem;">
+<div class="d-flex justify-content-center w-100">
+    <div class="card border-0 p-4 text-center bg-white w-100" style="max-width: 70rem;">
+        <CascadingAuthenticationState>
+            <AuthorizeView>
+                <Authorized>
 
-    <div class="d-flex justify-content-center my-5">
-        <div class="card shadow-lg p-4 text-center" style="max-width: 500px; width: 100%;">
-            <CascadingAuthenticationState>
-                <AuthorizeView>
-                    <Authorized>
-                        <h4 class="text-success mb-3">
+                        @if (mostrarBoton)
+                        {
+                            <button @onclick="SolicitarPermiso" class="boton-notificacion mx-auto d-block" style="width: 25rem;">
+                                Activar Notificaciones
+                            </button>
+                        }
+
+
+                    <div class="mb-4">
+                        <h4 class="text-success mb-2">
                             <i class="bi bi-check-circle-fill me-2"></i>Bienvenido, estás autenticado
                         </h4>
-                        <button class="btn btn-outline-danger px-4" @onclick="Logout" @onclick:preventDefault>
+                        <p class="text-muted">Desde aquí puedes gestionar tus notificaciones y ver las reservas del día.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <ReservasComponent />
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <button class="btn btn-danger btn-sm px-3 py-2 rounded-pill w-auto" style="font-size: 1rem;" @onclick="Logout" @onclick:preventDefault>
                             <i class="bi bi-box-arrow-right me-1"></i> Salir
                         </button>
-                    </Authorized>
-                    <NotAuthorized>
-                        <p class="text-danger">
-                            <i class="bi bi-exclamation-triangle-fill me-2"></i>No estás autorizado. Redirigiendo...
-                        </p>
-                    </NotAuthorized>
-                </AuthorizeView>
-            </CascadingAuthenticationState>
-        </div>
+                    </div>
+                </Authorized>
+                <NotAuthorized>
+                    <p class="text-danger">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>No estás autorizado. Redirigiendo...
+                    </p>
+                </NotAuthorized>
+            </AuthorizeView>
+        </CascadingAuthenticationState>
     </div>
 </div>
+</div>
+
 
 @code {
 
     private List<string> mensajes = new();
     private int contador = 1;
+    private bool mostrarBoton = true;
+
 
     private async Task Logout()
     {
@@ -68,12 +82,12 @@
     protected override async Task OnInitializedAsync()
     {
         SignalR.OnNotificacionRecibida += async (msg) =>
-         {
-             var mensajeConNumero = $"{msg} {contador++}";
-             mensajes.Add(mensajeConNumero);
-             await EnviarNotificacion();
-             await InvokeAsync(StateHasChanged);
-         };
+            {
+                var mensajeConNumero = $"{msg} {contador++}";
+                mensajes.Add(mensajeConNumero);
+                await EnviarNotificacion();
+                await InvokeAsync(StateHasChanged);
+            };
 
         await SignalR.ConectarAsync();
     }
@@ -81,6 +95,7 @@
     private async Task SolicitarPermiso()
     {
         await JS.InvokeVoidAsync("notifications.requestPermissionAndSubscribe");
+        mostrarBoton = false; // Ocultar botón
     }
 
     private async Task EnviarNotificacion()
