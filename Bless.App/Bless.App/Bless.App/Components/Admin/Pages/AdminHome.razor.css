@@ -1,0 +1,15 @@
+﻿.notificacion-campana {
+    z-index: 1050;
+    cursor: pointer;
+}
+
+.badge-notificacion {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    padding: 4px 6px;
+    line-height: 1;
+    min-width: 20px;
+    text-align: center;
+}
