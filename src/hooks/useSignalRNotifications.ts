@@ -34,7 +34,7 @@ export function useSignalRNotifications({ enabled = true, onMessage }: Options =
         accessTokenFactory: () => getAuthToken() ?? ""
       })
       .withAutomaticReconnect()
-      .configureLogging(signalR.LogLevel.Information)
+      .configureLogging(signalR.LogLevel.Warning)
       .build();
 
     connection.on("RecibirNotificacion", (message: string) => {
@@ -62,20 +62,25 @@ export function useSignalRNotifications({ enabled = true, onMessage }: Options =
 
     async function start() {
       try {
+        setError(null);
         setStatus("connecting");
         await connection.start();
         if (!disposed) {
           setStatus("connected");
         }
       } catch (startError) {
-        if (!disposed) {
+        if (!disposed && !isStopDuringNegotiationError(startError)) {
           setStatus("disconnected");
           setError(startError instanceof Error ? startError.message : "No se pudo conectar al hub.");
         }
       }
     }
 
-    void start();
+    void Promise.resolve().then(() => {
+      if (!disposed) {
+        void start();
+      }
+    });
 
     return () => {
       disposed = true;
@@ -88,4 +93,12 @@ export function useSignalRNotifications({ enabled = true, onMessage }: Options =
     status,
     error
   };
+}
+
+function isStopDuringNegotiationError(error: unknown): boolean {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return error.message.toLowerCase().includes("stopped during negotiation");
 }

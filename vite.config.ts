@@ -6,10 +6,10 @@ export default defineConfig({
   publicDir: "public",
   server: {
     port: 5173,
-    strictPort: false
+    strictPort: true
   },
   preview: {
     port: 4173,
-    strictPort: false
+    strictPort: true
   }
 });
