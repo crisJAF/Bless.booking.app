@@ -24,6 +24,10 @@ export function servicioDescripcion(servicio: Servicio) {
   return servicio.descripcion ?? servicio.Descripcion ?? "";
 }
 
+export function servicioPrecio(servicio: Servicio) {
+  return servicio.precio ?? servicio.Precio ?? 0;
+}
+
 export function reservaId(reserva: Reserva) {
   return reserva.reservaId ?? reserva.ReservaId ?? 0;
 }
