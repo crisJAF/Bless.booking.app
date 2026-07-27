@@ -1,5 +1,5 @@
-import { CalendarCheck, Menu, Scissors, X } from "lucide-react";
-import { useState } from "react";
+import { CalendarCheck, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 type HeaderProps = {
   onBook: () => void;
@@ -7,20 +7,35 @@ type HeaderProps = {
 
 export function Header({ onBook }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
+  const solidHeader = scrolled || menuOpen;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="navbar-app" aria-label="Navegación principal">
+    <nav className={`navbar-app ${solidHeader ? "is-scrolled" : ""}`} aria-label="Navegacion principal">
       <a className="navbar-brand-app" href="#inicio" onClick={closeMenu}>
-        <Scissors aria-hidden="true" size={20} />
+        <img src="/img/bless-logo.png" alt="" className="navbar-brand-logo" />
         <span>Bless Barber Shop</span>
       </a>
 
       <button
         className="icon-button d-md-none"
         type="button"
-        aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-label={menuOpen ? "Cerrar menu" : "Abrir menu"}
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen((current) => !current)}
       >
