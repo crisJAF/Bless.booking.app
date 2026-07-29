@@ -73,6 +73,7 @@ export type Reserva = {
 export type Review = {
   author_name?: string;
   profile_photo_url?: string;
+  ProfilePhotoUrl?: string;
   rating?: number;
   text?: string;
   Text?: string;

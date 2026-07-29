@@ -2,5 +2,6 @@ import type { Review } from "../types/api";
 import { apiFetch } from "./http";
 
 export async function getReviews() {
-  return apiFetch<Review[]>("/api/GooglePlaces/reviews");
+  const payload = await apiFetch<Review[] | { message?: string; Message?: string }>("/api/GooglePlaces/reviews");
+  return Array.isArray(payload) ? payload : [];
 }

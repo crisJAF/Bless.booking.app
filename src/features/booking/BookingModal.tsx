@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { Calendar, CheckCircle2, Clock, Loader2, X } from "lucide-react";
+import { BadgePercent, Calendar, CheckCircle2, Clock, Loader2, X } from "lucide-react";
 import { formatTime, timeToApiValue, toApiDate, todayInputValue } from "../../lib/date";
 import {
   barberoEspecialidad,
@@ -156,6 +156,14 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <button className="icon-button" type="button" aria-label="Cerrar reserva" onClick={onClose}>
               <X aria-hidden="true" />
             </button>
+          </div>
+
+          <div className="booking-modal-promo" role="note">
+            <BadgePercent aria-hidden="true" size={22} />
+            <div>
+              <strong>Tu 10% de descuento se aplica al completar tu primera reserva web.</strong>
+              <span>Elegis servicio, barbero y horario. No pagas en linea, solo apartas tu cita.</span>
+            </div>
           </div>
 
           <form className="booking-form" onSubmit={handleSubmit}>

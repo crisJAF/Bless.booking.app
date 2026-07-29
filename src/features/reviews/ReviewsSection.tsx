@@ -12,7 +12,7 @@ export function ReviewsSection() {
     queryFn: getReviews,
     staleTime: 1000 * 60 * 10
   });
-  const reviews = useMemo(() => reviewsQuery.data?.slice(0, 6) ?? [], [reviewsQuery.data]);
+  const reviews = useMemo(() => (Array.isArray(reviewsQuery.data) ? reviewsQuery.data.slice(0, 6) : []), [reviewsQuery.data]);
 
   useEffect(() => {
     if (!reviews.length) {
@@ -40,7 +40,11 @@ export function ReviewsSection() {
     return <p className="text-center text-muted">Cargando testimonios...</p>;
   }
 
-  if (reviewsQuery.isError || !reviews.length) {
+  if (reviewsQuery.isError) {
+    return <p className="text-center text-muted">No pudimos cargar los testimonios de Google en este momento.</p>;
+  }
+
+  if (!reviews.length) {
     return <p className="text-center text-muted">Aun no hay testimonios disponibles desde Google Places.</p>;
   }
 
@@ -88,27 +92,28 @@ export function ReviewsSection() {
         {reviews.map((review, index) => {
           const cardState =
             index === activeIndex
-              ? "is-active"
+              ? "review-card--active"
               : index === previousIndex
-                ? "is-prev"
+                ? "review-card--prev"
                 : index === nextIndex
-                  ? "is-next"
-                  : "is-hidden";
+                  ? "review-card--next"
+                  : "review-card--hidden";
           const author = reviewAuthor(review);
           const text = reviewText(review);
           const rating = Math.min(Math.max(review.rating ?? 0, 0), 5);
+          const profilePhotoUrl = review.profile_photo_url ?? review.ProfilePhotoUrl;
 
           return (
             <article
               className={`review-card review-card--carousel ${cardState}`}
               key={`${author}-${index}`}
-              aria-hidden={cardState === "is-hidden"}
+              aria-hidden={cardState === "review-card--hidden"}
             >
               <div className="review-card-shell">
                 <div className="review-card-top">
-                  {review.profile_photo_url ? (
+                  {profilePhotoUrl ? (
                     <img
-                      src={review.profile_photo_url}
+                      src={profilePhotoUrl}
                       className="review-avatar"
                       width={70}
                       height={70}
