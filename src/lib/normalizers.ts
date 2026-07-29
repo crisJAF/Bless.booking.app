@@ -20,10 +20,6 @@ export function servicioNombre(servicio: Servicio) {
   return servicio.nombre ?? servicio.Nombre ?? "Servicio";
 }
 
-export function servicioDescripcion(servicio: Servicio) {
-  return servicio.descripcion ?? servicio.Descripcion ?? "";
-}
-
 export function servicioPrecio(servicio: Servicio) {
   return servicio.precio ?? servicio.Precio ?? 0;
 }
@@ -42,10 +38,6 @@ export function reservaBarbero(reserva: Reserva) {
 
 export function reservaServicio(reserva: Reserva) {
   return reserva.nombreServicio ?? reserva.NombreServicio ?? "Servicio";
-}
-
-export function reservaFecha(reserva: Reserva) {
-  return reserva.fecha ?? reserva.Fecha ?? "";
 }
 
 export function reservaHora(reserva: Reserva) {

@@ -207,7 +207,7 @@ export function AdminDashboardPage() {
                 <div className="list-group-item p-0">
                   <button
                     type="button"
-                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2 fw-semibold"
+                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2"
                     onClick={() => toggleGroup("servicios")}
                   >
                     <span className="d-inline-flex align-items-center gap-2">
@@ -239,7 +239,7 @@ export function AdminDashboardPage() {
                 <div className="list-group-item p-0">
                   <button
                     type="button"
-                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2 fw-semibold"
+                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2"
                     onClick={() => toggleGroup("paginas")}
                   >
                     <span className="d-inline-flex align-items-center gap-2">
@@ -263,7 +263,7 @@ export function AdminDashboardPage() {
                 <div className="list-group-item p-0">
                   <button
                     type="button"
-                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2 fw-semibold"
+                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2"
                     onClick={() => toggleGroup("citas")}
                   >
                     <span className="d-inline-flex align-items-center gap-2">
@@ -303,7 +303,7 @@ export function AdminDashboardPage() {
                 <div className="list-group-item p-0">
                   <button
                     type="button"
-                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2 fw-semibold"
+                    className="btn btn-light w-100 rounded-0 border-0 d-flex justify-content-between align-items-center px-3 py-2"
                     onClick={() => toggleGroup("reportes")}
                   >
                     <span className="d-inline-flex align-items-center gap-2">
@@ -604,7 +604,7 @@ function KpiCard({ title, label, value, tone }: KpiCardProps) {
 }
 
 function sideItemClass(isActive: boolean) {
-  const classes = ["list-group-item", "list-group-item-action", "d-flex", "align-items-center", "gap-2", "fw-semibold"];
+  const classes = ["list-group-item", "list-group-item-action", "d-flex", "align-items-center", "gap-2"];
 
   if (isActive) {
     classes.push("active");

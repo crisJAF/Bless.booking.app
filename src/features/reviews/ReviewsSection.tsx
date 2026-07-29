@@ -24,7 +24,6 @@ const reviewCarousel3d: KeenSliderPlugin = (slider) => {
       Math.round(slideWidth / 2 / Math.tan(Math.PI / slideCountForRadius)) + 44
     );
 
-    slider.container.style.setProperty("--reviews-carousel-radius", `${radius}px`);
     slider.container.style.transform = `translateZ(-${radius}px) rotateY(${-360 * details.progress}deg)`;
 
     slider.slides.forEach((element, index) => {
@@ -139,7 +138,7 @@ export function ReviewsSection() {
   }
 
   return (
-    <div className="reviews-carousel reviews-carousel--keen">
+    <div className="reviews-carousel">
       <div className="reviews-carousel-scene">
         <div className="reviews-carousel-track keen-slider" ref={sliderRef} aria-live="polite">
           {reviews.map((review, index) => {
@@ -161,8 +160,8 @@ export function ReviewsSection() {
                       <img
                         src={profilePhotoUrl}
                         className="review-avatar"
-                        width={70}
-                        height={70}
+                        width={78}
+                        height={78}
                         alt={author}
                         loading="lazy"
                         onError={() => {
