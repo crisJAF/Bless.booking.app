@@ -16,8 +16,8 @@ import { getReservations } from "../../services/bookingService";
 import { getBarberos } from "../../services/catalogService";
 
 export function ReservationsTable() {
-  const [fechaSeleccionada, setFechaSeleccionada] = useStateDate();
-  const [selectedBarberoId, setSelectedBarberoId] = useStateBarbero();
+  const [fechaSeleccionada, setFechaSeleccionada] = useState(todayInputValue());
+  const [selectedBarberoId, setSelectedBarberoId] = useState("");
 
   const barberosQuery = useQuery({
     queryKey: ["barberos"],
@@ -154,12 +154,4 @@ function estadoClass(estado?: string) {
     default:
       return "status-neutral";
   }
-}
-
-function useStateDate() {
-  return useState(todayInputValue());
-}
-
-function useStateBarbero() {
-  return useState("");
 }
