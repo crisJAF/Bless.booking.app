@@ -82,18 +82,10 @@ const visualServices: VisualService[] = [
 ];
 
 const heroTickerItems = [
-  "Bless Barber Shop",
-  "Cortes de precision",
-  "Fade y taper",
-  "Barba definida",
-  "Perfilado limpio",
-  "Agenda en linea",
-  "Atencion cercana",
+  "Fade limpio",
   "Reserva en minutos",
-  "Estilo para Managua",
   "Acabado profesional",
-  "Horario claro",
-  "Tu espacio asegurado"
+  "Agenda sin llamadas"
 ];
 
 const aboutPillars: AboutPillar[] = [
