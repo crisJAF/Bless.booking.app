@@ -1,6 +1,6 @@
 # Bless Booking React
 
-Frontend React para Bless Barber Shop. Este repo queda como aplicacion frontend independiente y consume el backend .NET existente por HTTP y SignalR.
+Frontend React para Bless Barber Shop. Este repo queda como aplicacion frontend independiente y consume el backend .NET publicado en Azure por HTTP y SignalR.
 
 ## Stack
 
@@ -12,10 +12,10 @@ Frontend React para Bless Barber Shop. Este repo queda como aplicacion frontend 
 
 ## Configuracion
 
-Copia `.env.example` a `.env` y ajusta la URL del backend que levantes desde Visual Studio.
+Por defecto la app consume la API publicada en Azure. Para cambiar el backend, copia `.env.example` a `.env` y ajusta `VITE_API_BASE_URL`.
 
 ```bash
-VITE_API_BASE_URL=https://localhost:7228
+VITE_API_BASE_URL=https://bless-booking-api-cris-gubjazgucqh0f7bk.westus3-01.azurewebsites.net
 VITE_SIGNALR_NOTIFICATIONS_PATH=/hub/notificaciones
 VITE_VAPID_PUBLIC_KEY=tu_clave_publica_vapid
 ```
@@ -27,7 +27,7 @@ npm install
 npm run dev
 ```
 
-La app queda normalmente en `http://localhost:5173`.
+La app queda normalmente en `http://localhost:5173` y consume la API publicada en Azure.
 
 ## Rutas migradas
 
