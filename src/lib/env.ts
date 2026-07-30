@@ -1,9 +1,9 @@
 const configuredApiBaseUrl = import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "");
 
-const runtimeApiBaseUrl =
-  typeof window === "undefined" ? "http://localhost:5210" : `${window.location.protocol}//${window.location.hostname}:5210`;
+const azureApiBaseUrl =
+  "https://bless-booking-api-cris-gubjazgucqh0f7bk.westus3-01.azurewebsites.net";
 
-export const API_BASE_URL = configuredApiBaseUrl || runtimeApiBaseUrl;
+export const API_BASE_URL = configuredApiBaseUrl || azureApiBaseUrl;
 
 export const SIGNALR_NOTIFICATIONS_PATH =
   import.meta.env.VITE_SIGNALR_NOTIFICATIONS_PATH ?? "/hub/notificaciones";
